@@ -76,138 +76,181 @@
         /* إضافة هامش بين قائمة البحث والصورة المجاورة */
         .search-form {
             margin-right: 20px; /* يمكنك تعديل القيمة حسب الحاجة */
-        }
+        }/* تنسيق القسم */
+/* تنسيق القسم */
+.hidden-section {
+    margin-top: 30px; /* مسافة أعلى القسم */
+    padding: 20px; /* Padding داخل القسم */
+    background-color: hsla(0, 0%, 100%, 0.5); /* لون خلفية للتفريق */
+    border-radius: 10px; /* زوايا دائرية */
+}
 
-        /* تنسيق الصور */
-        .featured-images {
-            display: flex;
-            flex-wrap: wrap; /* السماح بلف الصور إلى الصفوف التالية */
-            gap: 15px; /* المسافة بين الصور */
-        }
+/* تنسيق قائمة المواد */
+.subject-list {
+    list-style-type: none; /* إزالة النقاط من القائمة */
+    padding: 0; /* إزالة الحواف */
+}
 
-        .featured-images .card {
-            flex: 0 0 calc(50% - 15px); /* كل صورة تأخذ 50% من العرض مع المسافة */
-            transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير سلس عند تغيير الخصائص */
-        }
+.subject-list li {
+    margin-bottom: 10px; /* المسافة بين العناصر */
+    font-weight: 500; /* زيادة سمك الخط */
+}
 
-        /* تأثير hover */
-        .featured-images .card:hover {
-            transform: scale(1.05); /* تكبير الصورة قليلاً عند مرور الماوس */
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* إضافة ظل عند مرور الماوس */
-        }
+/* تنسيق الصور */
+.featured-images {
+    display: flex;
+    flex-wrap: wrap; /* السماح بلف الصور إلى الصفوف التالية */
+    gap: 15px; /* المسافة بين الصور */
+}
+.featured-images .card {
+    flex: 0 0 calc(50% - 15px); /* كل كارد تأخذ 50% من العرض مع اعتبار المسافة */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير سلس عند تغيير الخصائص */
+    margin-bottom: 15px; /* إضافة مسافة أسفل كل كارد */
+    max-height: 300px; /* ضبط الحد الأقصى للارتفاع */
+    overflow: hidden; /* إخفاء أي محتوى يتجاوز الارتفاع */
+}
+
+/* تعديل عنوان الكارد لضبط المسافات */
+.featured-images .card-body {
+    padding: 10px; /* تقليل padding داخل الكارد */
+}
+
+/* إضافة تخصيصات خاصة بالصورة لتقليل حجمها */
+.featured-images .card-img-top {
+    max-height: 150px; /* ضبط الحد الأقصى لارتفاع الصورة */
+    object-fit: cover; /* الحفاظ على تناسق الصورة داخل الكارد */
+}
 
 
-        .background-container {
-            background-image: url('img/GettyImages-1200929334-Extended__1_.jpg'); /* استبدل بصورة الخلفية التي تريدها */
-            background-size: cover;
-            background-position: center;
-            width: 100%;
-            height: 100vh; /* ارتفاع الصورة ليغطي الشاشة بالكامل */
-            position: relative;
-        }
+/* تأثير hover */
+.featured-images .card:hover {
+    transform: scale(1.05); /* تكبير الصورة قليلاً عند مرور الماوس */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* إضافة ظل عند مرور الماوس */
+}
 
-        .text-overlay {
-            background-color: white;
-            width: 40%;
-            padding: 50px;
-            position: absolute;
-            left: 0;
-            top: 40%;
-            transform: translateY(-50%);
-            color: black;
-            text-align: right;
-            border-radius: 20px;
-            overflow: hidden;
-        }
+/* تعديلات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .featured-images .card {
+        flex: 0 0 100%; /* كل كارد تأخذ 100% على الشاشات الصغيرة */
+    }
+}
 
-        .text-overlay h1 {
-            font-size: 3em; /* تكبير حجم العنوان */
-            margin-bottom: 20px;
-        }
+/* تنسيق عنوان الكارد */
+.featured-images .card-title {
+    font-size: 1.2rem; /* حجم خط أكبر */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
 
-        .text-overlay h1 span {
-            color: #de00a5;
-        }
 
-        .text-overlay h1 .career {
-            color: black;
-        }
+.background-container {
+    background-image: url('img/GettyImages-1200929334-Extended__1_.jpg'); /* استبدل بصورة الخلفية التي تريدها */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh; /* ارتفاع الصورة ليغطي الشاشة بالكامل */
+    position: relative;
+}
 
-        .text-overlay p {
-            font-size: 1.5em; /* تكبير حجم الفقرة */
-            margin-bottom: 30px;
-            color: black;
-        }
+.text-overlay {
+    background-color: rgba(255, 255, 255, 0.8); /* خلفية شفافة بيضاء */
+    width: 100%; /* اجعل العرض 100% ليشغل كل عرض الخلفية */
+    max-width: 700px; /* زيادة الحد الأقصى للعرض */
+    padding: 30px; /* الحشو */
+    position: absolute;
+    left: 50px; /* إبعاد العنصر عن الحافة اليسرى */
+    top: 50%;
+    transform: translateY(-50%); /* إبقاء العنصر في الوسط عموديًا */
+    color: black; /* تغيير لون النص إلى الأسود */
+    text-align: left; /* محاذاة إلى اليسار */
+    border-radius: 20px; /* زوايا مدورة */
+    overflow: hidden; /* إخفاء أي محتوى يتجاوز الحدود */
+}
 
-        .logos {
-            display: flex;
-            justify-content: flex-start;
-            gap: 15px;
-            margin-top: 20px;
-        }
 
-        .logos img {
-            height: 35px; /* تكبير الشعارات قليلاً */
-            max-width: 100%;
-        }
+.text-overlay h1 {
+    font-size: 2.5em; /* تكبير حجم العنوان */
+    margin-bottom: 20px;
+}
 
-        .explore-button {
-            display: inline-block;
-            background-color: #de00a5;
-            color: white;
-            padding: 15px 30px; /* تكبير الزر */
-            border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
-            margin-top: 30px;
-            text-decoration: none;
-        }
+.text-overlay h1 span {
+    color: #de00a5;
+}
 
-        .discount-container {
-            background-color: white;
-            width: 100%; /* العرض 100% من عرض الصورة */
-            height: 7%; /* الارتفاع 7% من الصورة */
-            padding: 10px 20px;
-            position: absolute;
-            bottom: 0; /* في أسفل الصورة */
-            left: 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-radius: 50px 50px 0 0; /* شكل الحواف بيضاوية من الأعلى */
-        }
+.text-overlay h1 .career {
+    color: black; /* تأكيد أن كلمة 'your career' باللون الأسود */
+}
 
-        .discount-container .left-text {
-            text-align: left;
-            font-size: 1.2em; /* حجم النص */
-        }
+.text-overlay p {
+    font-size: 1.2em; /* تكبير حجم الفقرة */
+    margin-bottom: 30px;
+    color: black; /* تأكيد أن النص باللون الأسود */
+}
 
-        .discount-container .left-text span {
-            color: #de00a5;
-        }
+.logos {
+    display: flex;
+    justify-content: flex-start; /* محاذاة الشعارات إلى اليسار */
+    gap: 15px;
+    margin-top: 20px;
+}
 
-        .discount-container .right-reviews {
-            text-align: right;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.logos img {
+    height: 35px; /* تكبير الشعارات قليلاً */
+    max-width: 100%;
+}
 
-        .stars {
-            display: flex;
-            align-items: center;
-            gap: 3px;
-        }
+.btn-pink {
+    background-color: #de00a5;
+    color: rgb(18, 10, 10);
+    padding: 15px 30px; /* تكبير الزر */
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+}
 
-        .stars .fa-star {
-            color: #de00a5;
-            font-size: 1.5em; /* تكبير حجم النجوم */
-        }
+.discount-container {
+    background-color: white;
+    width: 100%; /* العرض 100% من عرض الصورة */
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0; /* في أسفل الصورة */
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px 50px 0 0; /* شكل الحواف بيضاوية من الأعلى */
+}
 
-        .reviews-text {
-            margin-right: 10px;
-            font-size: 1.2em; /* تكبير حجم النص */
-        }
+.discount-container .left-text {
+    text-align: left;
+    font-size: 1.2em; /* حجم النص */
+}
+
+.discount-container .left-text span {
+    color: #de00a5;
+}
+
+.discount-container .right-reviews {
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.stars .fa-star {
+    color: #de00a5;
+    font-size: 1.5em; /* تكبير حجم النجوم */
+}
+
+.reviews-text {
+    margin-right: 10px;
+    font-size: 1.2em; /* تكبير حجم النص */
+}
 
         .yotpo-logo {
             height: 30px; /* تكبير شعار Yotpo */
@@ -328,12 +371,105 @@
             height: auto; /* الحفاظ على نسبة العرض إلى الارتفاع */
             margin-bottom: 20px; /* فاصل بين الصورة والنص */
         }
+
+
+
+
+        .footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.social-icons a {
+  color: #de00a5;
+  font-size: 25px;
+}
+
+.social-icons a:hover {
+  color: #b72e71;
+}
+
+.btn-de00a5 {
+  background-color: #de00a5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-de00a5:hover {
+  background-color: #b72e71;
+}
+.card-subtitle {
+            font-size: 0.85rem;
+            color: black;
+        }
+
+        .rating {
+            font-size: 0.9rem;
+            color: black;
+        }
+
+        .btn-light {
+            background-color: #de00a5;
+            color: white;
+        }
+
+        .btn-light:hover {
+            background-color: #2541fc;
+            color: white;
+        }
+
+        .card-title {
+            color: black;
+            font-size: 1.25rem;
+        }
+
+        .card-body h6 {
+            color: black;
+            font-size: 1rem;
+        }
+
+        .card {
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .section-divider {
+            background-color: #f8f9fa; /* لون خلفية فاتح للقسم */
+            padding: 20px 0; /* مساحة داخلية للقسم */
+            border-radius: 8px; /* زوايا مستديرة */
+            margin: 40px 0; /* هامش خارجي */
+        }
+
+        .card-body .btn {
+            margin-top: auto; /* لضمان أن الزر دائمًا في الأسفل */
+        }
     </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <img src="logo.png" alt="Logo" width="40" height="40" class="me-3"> <!-- مكان للوجو -->
+            <img src="img\لبخبفيه.jpg" alt="Logo" width="40" height="40" class="me-3"> <!-- مكان للوجو -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -360,7 +496,7 @@
                     <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
                 <div class="dropdown">
-                    <img src="user_image.jpg" alt="User" class="user-icon" width="40" height="40" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img\c2.png" alt="User" class="user-icon" width="40" height="40" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="#">Your Learning</a></li>
                         <li><a class="dropdown-item" href="#">Wishlist</a></li>
@@ -418,7 +554,6 @@
             <li>For Schools</li>
         </ul>
     </div>
-
     <div class="container hidden-section" id="subjectContainer">
         <div class="row">
             <div class="col-md-6">
@@ -442,35 +577,49 @@
             </div>
             <div class="col-md-6">
                 <h5>Featured</h5>
-                <div class="featured-images"> <!-- إضافة كلاس هنا -->
-                    <div class="card mb-3">
-                        <img src="img/thumbnail_bf4d80fd-a8a8-4990-a968-76cb5d9a54d7.webp" class="card-img-top" alt="Project Management">
-                        <div class="card-body">
-                            <h6 class="card-title">Foundations of Project Management</h6>
+                <div class="featured-images">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="img/thumbnail_bf4d80fd-a8a8-4990-a968-76cb5d9a54d7.webp" class="card-img-top" alt="Project Management">
+                                <div class="card-body">
+                                    <h6 class="card-title">Foundations of Project Management</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="img/thumbnail_fdee0391-6169-4d17-a80f-7825b6cc23ff.webp" class="card-img-top" alt="People Management Skills">
+                                <div class="card-body">
+                                    <h6 class="card-title">People Management Skills</h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card mb-3">
-                        <img src="img/thumbnail_fdee0391-6169-4d17-a80f-7825b6cc23ff.webp" class="card-img-top" alt="People Management Skills">
-                        <div class="card-body">
-                            <h6 class="card-title">People Management Skills</h6>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="img/thumbnail_36d68953-a00a-4f96-8016-7dc8607c7771.webp" class="card-img-top" alt="Cyber Security">
+                                <div class="card-body">
+                                    <h6 class="card-title">Introduction to Cyber Security</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <img src="img/thumbnail_3dbed0ee-c9a9-4abd-9d87-c2ddd443bb48.webp" class="card-img-top" alt="Healthcare Trainer">
+                                <div class="card-body">
+                                    <h6 class="card-title">Train the Healthcare Trainer</h6>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="card mb-3">
-                        <img src="img/thumbnail_36d68953-a00a-4f96-8016-7dc8607c7771.webp" class="card-img-top" alt="Cyber Security">
-                        <div class="card-body">
-                            <h6 class="card-title">Introduction to Cyber Security</h6>
-                        </div>
-                    </div>
-                    <div class="card mb-3">
-                        <img src="img/thumbnail_3dbed0ee-c9a9-4abd-9d87-c2ddd443bb48.webp" class="card-img-top" alt="Healthcare Trainer">
-                        <div class="card-body">
-                            <h6 class="card-title">Train the Healthcare Trainer</h6>
-                        </div>
-                    </div>
-                </div> <!-- نهاية الكلاس -->
+                </div>
             </div>
         </div>
     </div>
+    
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -499,39 +648,42 @@
             toggleVisibility('subjectContainer');
         });
     </script>
-
-    <section>
-        <div class="container-fluid p-0">
-            <div class="background-container">
-                <div class="text-overlay">
-                    <h1><span>Future-proof</span> <span class="career">your career</span></h1>
-                    <p>Make your next career move with online courses from 200+ world-class universities and brands.</p>
-                    <div class="logos">
-                        <img src="img/5e88ca31-5226-4fd6-a22a-1ccbb1e75ac4.svg" alt="University of Cambridge Logo">
-                        <img src="img/9b808d51-57ce-478a-8e2b-1f0c7e777050.svg" alt="UCL Logo">
-                        <img src="img/9fce77fc-75e5-462e-86fb-432e258322b5.svg" alt="University of Leeds Logo">
-                        <img src="img/ea43bd27-7641-4110-ab59-bfabf08f3713.svg" alt="The Open University Logo">
-                    </div>
-                    <a href="#" class="explore-button">explore courses</a>
+<section>
+    <div class="container-fluid p-0">
+        <div class="background-container">
+            <div class="text-overlay text-center text-white">
+                <h1>
+                    <span style="color: #de00a5;">Future-proof</span>
+                    <span class="career" style="color: black;">your career</span>
+                </h1>
+                <p>Make your next career move with online courses from 200+ world-class universities and brands.</p>
+                <div class="logos d-flex justify-content-center">
+                    <img src="img/5e88ca31-5226-4fd6-a22a-1ccbb1e75ac4.svg" alt="University of Cambridge Logo" class="mx-2">
+                    <img src="img/9b808d51-57ce-478a-8e2b-1f0c7e777050.svg" alt="UCL Logo" class="mx-2">
+                    <img src="img/9fce77fc-75e5-462e-86fb-432e258322b5.svg" alt="University of Leeds Logo" class="mx-2">
+                    <img src="img/ea43bd27-7641-4110-ab59-bfabf08f3713.svg" alt="The Open University Logo" class="mx-2">
                 </div>
-                <div class="discount-container">
-                    <div class="left-text">
-                        <h2>Get <span>30% off</span> a year of Unlimited learning</h2>
+                <a href="#" class="btn btn-pink mt-3">explore courses</a>
+            </div>
+            <div class="discount-container d-flex justify-content-between align-items-center p-3">
+                <div class="left-text">
+                    <h2>Get <span style="color: #de00a5;">30% off</span> a year of Unlimited learning</h2>
+                </div>
+                <div class="right-reviews text-right">
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
                     </div>
-                    <div class="right-reviews">
-                        <div class="stars">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-regular fa-star"></i> <!-- نجمة نصف -->
-                        </div>
-                        <span class="reviews-text">186,940 learner reviews</span>
-                    </div>
+                    <span class="reviews-text">186,940 learner reviews</span>
                 </div>
             </div>
         </div>
-    </section><br><br><br>
+    </div>
+</section>
+<br><br><br>
     <section>
         <div class="header">ALL SHORT COURSES</div> <!-- العنوان في أعلى الصفحة -->
         <div class="container">
@@ -683,6 +835,246 @@
                 </button>
             </div>
         </div>
-    </section>
+    </section><br><br><br>
+    
+<section class="container my-5">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img\thumbnail_0ca42500-415d-4e53-a636-3364ad02fe46.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">Deakin University</h5>
+                    <h6 class="card-subtitle mb-2">Professional Resilience: Building Skills to Thrive at Work</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span> 4.8(692  reviews)</span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img\thumbnail_5132c01a-ffd7-46f8-83a2-95ac641a4ab9.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">UCL (University College London)</h5>
+                    <h6 class="card-subtitle mb-2">The Many Faces of Dementia</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span> 4.9(464 reviews)</span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_59359d44-f391-4258-a82d-d9d549390980.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">The University of Nottingham</h5>
+                    <h6 class="card-subtitle mb-2">Virtual Work Experience and Exploring the Veterinary Profession</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span> 4.8(510 reviews)</span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- Card 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_5b18699f-5c8a-49e9-ad48-dc47b1338c79.jpg" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">ABRSM</h5>
+                    <h6 class="card-subtitle mb-2">Becoming a Better Music Teacher</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span> 4.8(144 reviews)</span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_9dd6c9f7-511b-4c41-a988-8c93fc888da5.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">The University of Kent</h5>
+                    <h6 class="card-subtitle mb-2">How to Fundraise: A Guide to Fundraising for Non-Fundraisers</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.8(112 reviews) </span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_b4e11737-1a9b-4fcb-a02b-32a965d0d35d.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">University of Groningen & Global Center on Adaptation</h5>
+                    <h6 class="card-subtitle mb-2">Making Climate Adaptation Happen: Governing Transformation Strategies for Climate Change</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.5 (43 reviews) </span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        <!-- Card 7 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_2cf6618b-1080-4b15-b6bf-744799045345.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">National Yang Ming Chiao Tung University (NYCU)</h5>
+                    <h6 class="card-subtitle mb-2">Fall in Love with Mandarin</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.4(59 reviews) </span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 8 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_e6e0c329-d6ea-405a-8977-f2e6c6c4e357.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">Lancaster University</h5>
+                    <h6 class="card-subtitle mb-2">Dyslexia and Foreign Language Teaching</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.8(228 reviews) </span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 9 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_df6743aa-0747-4d2c-ac3e-3d1fa128200d.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">The University of Nottingham, British Library & University of Birmingham</h5>
+                    <h6 class="card-subtitle mb-2">Learning from the Past: A Guide for the Curious Researcher</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span> 4.4(156 reviews)</span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Card 10 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_87037db4-3a13-41ec-ac1a-022399316fd0.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">The University of Kent</h5>
+                    <h6 class="card-subtitle mb-2">Understanding Autism</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.7(1062 reviews) </span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 11 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_01b1d374-fa27-4ebf-8b6c-3cc6b3403939.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">University of Birmingham</h5>
+                    <h6 class="card-subtitle mb-2">Improving Your Image: Dental Photography in Practice</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.7(35 reviews) </span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+        <!-- Card 12 -->
+        <div class="col-md-4 mb-4">
+            <div class="card text-white bg-fuchsia">
+                <img src="img/thumbnail_4c7b7981-4e47-4e4c-b2fb-0749a0df4889.webp" class="card-img-top" alt="University Image">
+                <div class="card-body">
+                    <h5 class="card-title">The University of Glasgow, The University of Edinburgh & The University of Sheffield</h5>
+                    <h6 class="card-subtitle mb-2">Career Management for Early Career Academic Researchers</h6>
+                    <div class="rating">
+                        <span>⭐⭐⭐⭐⭐</span>
+                        <span>4.7(23 reviews) </span>
+                    </div>
+                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section><br><br><br>
+    <footer class="bg-light py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-3 mb-4">
+              <h3>About our platform</h3>
+              <p>Our platform provides the latest educational curricula to develop skills in life.</p>
+            </div>
+      
+            <div class="col-md-3 mb-4">
+              <h3>Quick links</h3>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-dark">Lessons</a></li>
+                <li><a href="#" class="text-dark">Educational programs</a></li>
+                <li><a href="#" class="text-dark">Certificates</a></li>
+                <li><a href="#" class="text-dark">Blog</a></li>
+              </ul>
+            </div>
+      
+            <div class="col-md-3 mb-4">
+              <h3>Contact us</h3>
+              <p>e-mail: sbka@gmail.com</p>
+              <p>Phone number: 01037892157</p>
+              <div class="social-icons">
+                <a href="#" class="text-de00a5 me-3"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="text-de00a5 me-3"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="text-de00a5"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+            </div>
+      
+            <div class="col-md-3 mb-4">
+              <h3>Subscribe now</h3>
+              <form>
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Enter your e-mail" required>
+                  <button type="submit" class="btn btn-de00a5">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+      
+          <div class="text-center mt-4">
+            <p>&copy; All right reserved. Learning platform, 2024</p>
+          </div>
+        </div>
+      </footer>
+      
 </body>
 </html>
