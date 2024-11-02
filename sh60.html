@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <!-- إضافة مكتبة Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet" />
+    <style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            width: 250px; /* ثابت للعرض */
+        }
+
+        .content {
+            margin-left: 270px; /* ترك مسافة للشريط الجانبي */
+            padding: 20px;
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #ff00ff;
+        }
+
+        /* الفيديو */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            padding: 20px; /* إضافة padding حول الفيديو */
+        }
+
+        .video-js {
+            max-width: 600px; /* الحد الأقصى لعرض الفيديو */
+            width: 100%; /* جعل عرض الفيديو مرن */
+        }
+
+        /* الشريط السفلي */
+        .bottom-bar {
+            position: fixed; /* اجعل الشريط السفلي ثابتًا */
+            bottom: 0;
+            left: 250px; /* تبدأ من نهاية الشريط الجانبي */
+            width: calc(100% - 250px); /* يأخذ العرض الكامل باستثناء عرض الشريط الجانبي */
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .bottom-bar button {
+            background-color: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #ff66ff;
+        }
+
+        /* الأيقونات العلوية */
+        .top-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .top-icons a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .top-icons a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        /* الروابط الإضافية */
+        .additional-links {
+            margin-top: 20px;
+        }
+
+        .additional-links a {
+            color: #ff00ff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* هذا الجزء لتوسيع زر التشغيل ليكون في المنتصف */
+        .vjs-big-play-button {
+            left: 50% !important; /* تحديد موضع الزر بشكل مركزي */
+            top: 50% !important; /* تحديد موضع الزر بشكل مركزي */
+            transform: translate(-50%, -50%) !important; /* استخدام التحويل لضبط موضع الزر */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar">
+        <h6> Open now</h6>
+        <ul class="list-unstyled">
+            <li class="week"> <a href="sa.html">Let's get started - Video</a></li>
+            <li class="week"><a href="sa2.html">1.2 Learning online with Deakin - Video</a></li>
+            <li class="week"><a href="sa1.html">1.3 What helps us become resilient? - Discussion</a></li>
+            <li><a href="sa3.html">What is resilience and why is it important?</a></li>
+            <li><a href="sa4.html">Learning to become resilient</a></li>
+        </ul>
+    </div>
+
+    <!-- قسم المحتوى -->
+    <div class="content">
+        <div class="container">
+            <!-- شريط التقدم -->
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        1.2 You've completed 1 step in Week 1
+                    </div>
+                </div>
+            </div>
+
+            <!-- الأيقونات العلوية -->
+            <div class="top-icons">
+                <a href="todo.html" target="_blank">To do</a>
+                <a href="conversations.html" target="_blank">Conversations</a>
+                <a href="progress.html" target="_blank">Progress</a>
+            </div>
+
+            <!-- الفيديو -->
+            <div class="video-container">
+                <video
+                    id="my-video"
+                    class="video-js"
+                    controls
+                    preload="auto"
+                    width="600"
+                    height="300"
+                    poster="//view.vzaar.com/23860418/image"
+                    data-setup="{}"
+                >
+                    <source src="//view.vzaar.com/23860418/download/sd_lower" type="video/mp4" />
+                    <source src="//view.vzaar.com/23860418/adaptive.m3u8" type="application/x-mpegURL" />
+                    <track kind="subtitles" src="https://ugc.futurelearn.com/uploads/files/c2/74/c274a11c-9847-409e-9be6-9f18974dd8ab/Step1.02-LearningOnline-Deakin.vtt" srclang="en" label="English" default>
+                    <p class="vjs-no-js">
+                        To view this video please enable JavaScript, and consider upgrading to a web browser that
+                        <a href="https://www.google.com/chrome/" target="_blank">supports HTML5 video</a>
+                    </p>
+                </video>
+            </div>
+        <div>
+            <h3>Let's get started</h3><br>
+            <p>757 comments</p><br>
+            <h4>Contemporary life is stressful, and we all need to become more resilient both personally and professionally.</h4><br>
+            <p>Given the outbreak of COVID-19 and many people’s rising concerns, about their health, their families and their jobs, preserving and building our personal and professional resilience supported by practical, digitally enabled strategies is more important than ever.</p><br>
+            <p>Resilience is commonly thought of as the capacity to ‘bounce back’ after stressful life events, but it’s also far more complex than that.</p><br>
+            <h4>What you’ll be learning</h4>
+            <p>In this course you’ll:</p><br>
+            <p>explore different definitions of resilience</p><br>
+            <p>discover how you can learn to become more resilient</p><br>
+            <p>investigate how resilience contributes to career success</p><br>
+            <p>explore the role of organisations and communities in building resilience</p><br>
+            <p>produce your own resilience plan.</p><br>
+            <p>The big question we’ll be working together to answer is: how can we learn to be more resilient?</p><br>
+            <p>While responses to COVID-19 are not the focus of this course, you’ll have the opportunity to engage with other participants from around the world about this topic that affects everyone, everywhere.</p><br>
+            <h3>Meet the team</h3>
+            <p>Your lead educator for this course is Adjunct Professor Marcus O’Donnell (Pro Vice-Chancellor, Teaching and Learning, Deakin University). Marcus has over 30 years experience in education, health and community development, and currently researches connections between education and wellbeing.</p><br>
+            <p>Also on hand to join you in conversation is Dr Sarah Duffy (Education Consultant, Deakin University) and educational psychologist Dr Hania Khattab (Deakin University).</p><br>
+            <p>We hope you enjoy your learning experience!</p>
+            <h3>Your task</h3>
+             <p>What are the key words that come to mind when you think of resilience?</p><br><br>
+            <p>Add two or three words to this word cloud1, which we’ll refer to later in the course.</p><br><br>
+            <p>(Liking and replying to comments that interest or challenge you is an important way of contributing to the conversations that will make this course a vibrant experience not only for you, but also for other learners.)</p><br><br>
+            <p>When you’re done, select mark as complete and move to the next step.</p><br><br>
+            <p>© Deakin University</p><br><br>
+        </div>
+
+      <!-- الشريط السفلي -->
+    <div class="bottom-bar">
+        <button><a href="" style="color: #fff; text-decoration: none;">Previous</a></button>
+        <button id="toggleButton" onclick="toggleComplete()">Mark as complete</button>
+        <button><a href="sa1.html" style="color: #fff; text-decoration: none;">Next</a></button>
+    </div>
+
+    <!-- إضافة مكتبة jQuery و Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript لتغيير النص عند الضغط على الزر -->
+    <script>
+        function toggleComplete() {
+            const button = document.getElementById("toggleButton");
+            if (button.innerHTML.trim() === "Mark as complete") {
+                button.innerHTML = '<span>&#10003;</span> Step completed';
+            } else {
+                button.innerHTML = 'Mark as complete';
+            }
+        }
+    </script>
+</body>
+</html>

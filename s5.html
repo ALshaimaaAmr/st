@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+         .c {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    max-width: 400px;
+    height: 410px;
+    text-align: left;
+    margin-top: 190px;
+    margin-left: 980px;
+
+}
+
+.w {
+    color: #333;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.r {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #EC407A;
+    margin-bottom: 10px;
+    margin-right: -20px;
+}
+
+
+.r:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0D47A1;
+    margin-bottom: 10px;
+}
+
+.rr {
+    margin-right: 5px;
+}
+
+.ww {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.rrr {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.wwww {
+    margin-bottom: 10px;
+    color: #424242;
+}
+
+.i {
+    background-color: #d600d6;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 80px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.i:hover {
+    background-color: #0D47A1;
+}
+
+.ii{
+    margin-top: -470px;
+    color: #d600d6;
+    margin-left: 40px;
+    font-size: small;
+}
+
+.uls:hover{
+    margin-top: -470px;
+    color: #0D47A1;
+    margin-left: 40px;
+    font-size: small;
+}
+
+.o{
+    margin-left: 30px;
+}
+
+.kk{
+    margin-top: -15px;
+    margin-left: 250px;
+}
+
+.k{
+    color: #EC407A;
+}
+
+.k:hover{
+    color: #0D47A1;
+}
+
+.z{
+    font-size: 25px;
+}
+
+.z{
+  font-family: "Roboto Condensed" , serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+
+.zzz {
+     max-width: 700px;
+     margin: 0 auto;
+     padding: 20px;
+     margin-left: 220px;
+ }
+
+.zzzz {
+     display: flex;
+     gap: 40px;
+     margin-bottom: 20px;
+     margin-left: -100px;
+ }
+
+.zzzz div {
+     text-align: center;
+     margin-top: 10px;
+ }
+
+.v {
+    display: block;
+     font-size: 14.5px;
+     font-weight: bold;
+     color: #616161;
+     
+ }
+
+.sw {
+    text-align: center;
+     font-size: 1.1em;
+
+}
+
+.si:hover{
+    color: #0D47A1;
+}
+
+.yu {
+     color: #999;
+ }
+
+.pr {
+     color: #ed00ed;
+    font-weight: bold;
+    font-size: 14.5px;
+}
+
+.lii {
+     text-align: center;
+    margin-top: 40px;
+    background-color: #E0E0E0 ;
+    padding: 20px 15px;
+    margin-left: -160px;
+ }
+
+ .lie{
+    margin-top: 10px;
+ }
+.er {
+     margin: 0 10px;
+     color: black;
+     text-decoration: none;
+    
+}
+
+.er:hover {
+     color: #0D47A1;
+ }
+ html {
+            height: 100%;
+        }
+
+        body {
+            height: 100%;
+            margin: 0; /* إزالة الهامش الافتراضي */
+            padding-top: 60px; /* إضافة مساحة أعلى المحتوى لتجنب تداخل المحتوى مع شريط التنقل الثابت */
+            background: linear-gradient(to right, #ffffff, #e6d9f5, #f8c8e0); /* الخلفية الجديدة */
+        }
+
+        .navbar {
+            position: fixed; /* جعل شريط التنقل ثابت */
+            top: 0; /* تأكيد أن شريط التنقل في أعلى الصفحة */
+            width: 100%; /* تأكيد أن العرض 100% */
+            z-index: 1000; /* التأكد من أن شريط التنقل يظهر فوق العناصر الأخرى */
+        }
+
+        .nav-item {
+            background: #de00a5;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 0 10px; /* إضافة مسافة بين العناصر */
+        }
+
+        .courses-container,
+        .industry-container,
+        .hidden-section {
+            display: none;
+            margin-top: 20px;
+        }
+
+        .courses-list {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .courses-list div {
+            width: 30%;
+        }
+
+        .industry-list,
+        .subject-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .industry-list li,
+        .subject-list li {
+            padding: 5px 0;
+        }
+
+        .user-icon {
+            cursor: pointer;
+        }
+
+        .dropdown-menu a {
+            color: #de00a5;
+        }
+
+        /* إضافة مسافة أسفل كل عنصر في القائمة */
+        .navbar-nav .nav-link {
+            margin-bottom: 10px;
+        }
+
+        /* إضافة هامش بين قائمة البحث والصورة المجاورة */
+        .search-form {
+            margin-right: 20px; /* يمكنك تعديل القيمة حسب الحاجة */
+        }/* تنسيق القسم */
+/* تنسيق القسم */
+.hidden-section {
+    margin-top: 30px; /* مسافة أعلى القسم */
+    padding: 20px; /* Padding داخل القسم */
+    background-color: hsla(0, 0%, 100%, 0.5); /* لون خلفية للتفريق */
+    border-radius: 10px; /* زوايا دائرية */
+}
+
+/* تنسيق قائمة المواد */
+.subject-list {
+    list-style-type: none; /* إزالة النقاط من القائمة */
+    padding: 0; /* إزالة الحواف */
+}
+
+.subject-list li {
+    margin-bottom: 10px; /* المسافة بين العناصر */
+    font-weight: 500; /* زيادة سمك الخط */
+}
+
+/* تنسيق الصور */
+.featured-images {
+    display: flex;
+    flex-wrap: wrap; /* السماح بلف الصور إلى الصفوف التالية */
+    gap: 15px; /* المسافة بين الصور */
+}
+.featured-images .card {
+    flex: 0 0 calc(50% - 15px); /* كل كارد تأخذ 50% من العرض مع اعتبار المسافة */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير سلس عند تغيير الخصائص */
+    margin-bottom: 15px; /* إضافة مسافة أسفل كل كارد */
+    max-height: 300px; /* ضبط الحد الأقصى للارتفاع */
+    overflow: hidden; /* إخفاء أي محتوى يتجاوز الارتفاع */
+}
+
+/* تعديل عنوان الكارد لضبط المسافات */
+.featured-images .card-body {
+    padding: 10px; /* تقليل padding داخل الكارد */
+}
+
+/* إضافة تخصيصات خاصة بالصورة لتقليل حجمها */
+.featured-images .card-img-top {
+    max-height: 150px; /* ضبط الحد الأقصى لارتفاع الصورة */
+    object-fit: cover; /* الحفاظ على تناسق الصورة داخل الكارد */
+}
+
+
+/* تأثير hover */
+.featured-images .card:hover {
+    transform: scale(1.05); /* تكبير الصورة قليلاً عند مرور الماوس */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* إضافة ظل عند مرور الماوس */
+}
+
+/* تعديلات للشاشات الصغيرة */
+@media (max-width: 768px) {
+    .featured-images .card {
+        flex: 0 0 100%; /* كل كارد تأخذ 100% على الشاشات الصغيرة */
+    }
+}
+
+/* تنسيق عنوان الكارد */
+.featured-images .card-title {
+    font-size: 1.2rem; /* حجم خط أكبر */
+    text-align: center; /* محاذاة النص في المنتصف */
+}
+
+
+
+
+
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #34495e;
+  padding-top: 20px;
+  font-size: 14px;
+}
+
+.social-icons a {
+  color: #de00a5;
+  font-size: 25px;
+}
+
+.social-icons a:hover {
+  color: #b72e71;
+}
+
+.btn-de00a5 {
+  background-color: #de00a5;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-de00a5:hover {
+  background-color: #b72e71;
+}
+.card-subtitle {
+            font-size: 0.85rem;
+            color: black;
+        }
+
+        .rating {
+            font-size: 0.9rem;
+            color: black;
+        }
+
+        .btn-light {
+            background-color: #de00a5;
+            color: white;
+        }
+
+        .btn-light:hover {
+            background-color: #2541fc;
+            color: white;
+        }
+
+        .card-title {
+            color: black;
+            font-size: 1.25rem;
+        }
+
+        .card-body h6 {
+            color: black;
+            font-size: 1rem;
+        }
+
+        .card {
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .section-divider {
+            background-color: #f8f9fa; /* لون خلفية فاتح للقسم */
+            padding: 20px 0; /* مساحة داخلية للقسم */
+            border-radius: 8px; /* زوايا مستديرة */
+            margin: 40px 0; /* هامش خارجي */
+        }
+
+        .card-body .btn {
+            margin-top: auto; /* لضمان أن الزر دائمًا في الأسفل */
+        }
+        .h{
+            width: 10%;
+            height: 220px;
+        }
+
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <img src="img\لبخبفيه.jpg" alt="Logo" width="40" height="40" class="me-3"> <!-- مكان للوجو -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="subjectLink">Subject</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="coursesLink">Courses</a>
+                    </li>
+                    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="forBusinessLink">For Business</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="e.html">Your Learning</a>
+                    </li>
+                </ul>
+                <form class="d-flex search-form" role="search"> <!-- إضافة الكلاس هنا -->
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+                <div class="dropdown">
+                    <img src="img\c2.png" alt="User" class="user-icon" width="40" height="40" data-bs-toggle="dropdown" aria-expanded="false">
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="e.html">Your Learning</a></li>
+                       
+                        <li><a class="dropdown-item" href="c.html">Profile</a></li>
+                        <li><a class="dropdown-item" href="b.html">Settings</a></li>
+                        <li><a class="dropdown-item" href="ab.html">Account</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="indee.html">Sign out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container industry-container" id="industryContainer">
+        <h5>Industry Type</h5>
+        <ul class="industry-list">
+            <li><a href="ا.html"class="hh" >For Universities</a></li>
+            <li><a href="na.html"class="hh" >For Businesses</a></li>
+            <li><a href="ا.html"class="hh" >For Government</a></li>
+            <li><a href="na4.html"class="hh" >For Schools</a></li>
+        </ul>
+    </div>
+    <div class="container hidden-section" id="subjectContainer">
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Subjects</h5>
+                <ul class="subject-list">
+                    <li ><a href="na.html"class="hh" > Business & Management</li></a>
+                    <li ><a href="na1.html" class="hh"> Creative Arts & Media</li></a>
+                    <li > <a href="na2.html"class="hh" >Healthcare & Medicine</li></a>
+                    <li> <a href="na3.html"class="hh">History</li></a>
+                    <li ><a href="na5.html"class="hh">IT & Computer Science</li></a>
+                    <li ><a href="na6.html"class="hh">Language</li></a>
+                   
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h5>Featured</h5>
+                <div class="featured-images">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <a href="s9.html">
+                                <img src="img/thumbnail_bf4d80fd-a8a8-4990-a968-76cb5d9a54d7.webp" class="card-img-top" alt="Project Management">
+                               </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Foundations of Project Management</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <a href="s10.html">
+                                <img src="img/thumbnail_fdee0391-6169-4d17-a80f-7825b6cc23ff.webp" class="card-img-top" alt="People Management Skills">
+                                </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">People Management Skills</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <a href="s11.html">
+                                <img src="img/thumbnail_36d68953-a00a-4f96-8016-7dc8607c7771.webp" class="card-img-top" alt="Cyber Security">
+                               </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Introduction to Cyber Security</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card mb-3">
+                                <a href="s12.html">
+                                <img src="img/thumbnail_3dbed0ee-c9a9-4abd-9d87-c2ddd443bb48.webp" class="card-img-top" alt="Healthcare Trainer">
+                               </a>
+                                <div class="card-body">
+                                    <h6 class="card-title">Train the Healthcare Trainer</h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Toggle visibility of sections based on clicked link
+        function toggleVisibility(targetId) {
+            const targetSection = document.getElementById(targetId);
+            const isVisible = targetSection.style.display === 'block';
+            targetSection.style.display = isVisible ? 'none' : 'block';
+        }
+
+        // Event listeners for each link
+        document.getElementById('coursesLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleVisibility('coursesContainer');
+        });
+
+        document.getElementById('forBusinessLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleVisibility('industryContainer');
+        });
+
+        document.getElementById('subjectLink').addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleVisibility('subjectContainer');
+        });
+    </script>
+
+
+<div class="c">
+    <h2 class="w">Making Climate Adaptation Happen: Governing Transformation Strategies for Climate Change
+    </h2>
+    <div class="r">
+        <span class="rr">⭐</span>
+        <span class="rr">⭐</span>
+        <span class="rr">⭐</span>
+        <span class="rr">⭐</span>
+        <span class="rr">⭐</span>
+        <span class="rr">4.5 (43 reviews)</span>
+    </div>
+    <p class="ww"> <strong> 7349  </strong> enrolled on this course</p>
+
+     <div class="www"><ul class="rrr">
+        <li class="wwww"> <i class="fa-solid fa-hourglass-half"></i>4 weeks</li>
+        <li class="wwww">🕒 4 hours per week</li>
+        <li class="wwww">📜 Digital certificate when eligible</li>
+        <li class="wwww">📈 open level</li>
+      </ul></div>
+   <a href="sa26.html"> <button class="i">Join course</button></a>
+</div>
+<section>
+    <div class="ii">
+        <h3>online course /Nature & Environment</h3><br>
+        <img src="img\rr.svg"  width="11%"><br><br>
+    </div>
+    <div class="o">
+        <h3 class="z">Making Climate Adaptation Happen: Governing Transformation Strategies for Climate Change
+        </h3><p class="zz">Explore how adaptive governance could help policymakers plan for and manage sudden environmental changes.</p>
+       
+        
+    
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span>⭐</span>
+            <span class="k">4.5 (43 reviews)</span> <p class="kk"><strong> 7349 </strong> enrolled on this course</p>
+        <img src="img/thumbnail_b4e11737-1a9b-4fcb-a02b-32a965d0d35d.webp" width="50%">
+    </div>
+</section>
+
+ <div class="zzz">
+    <div class="zzzz">
+     <div> <span class="v">Duration</span>
+       4 weeks
+       </div>
+       <div>
+      <span class="v">Weekly study</span>
+       4 hours
+      </div>
+ 
+     
+
+      <div>
+     <span class="v"  >100% online</span>
+    <a href="#" class="si" style="color: #e91e63; text-decoration: none;">How it<br> works</a>
+     </div>
+     <div class="sw">
+     <span class="v" >Unlimited subscription</span>
+     <del class="yu" style="color: black;">$174.99</del> <span class="pr">$119.99 for a whole year</span><br>
+     <a href="#" style="color: #e91e63; text-decoration: none;">Learn more</a>
+    </div>
+     </div>
+    <div class="lii">
+    <a href="#" class="er">Overview</a>
+    <a href="#" class="er">Start dates</a>
+    <a href="#" class="er">Requirements</a>
+    <a href="#" class="er">Educators</a>
+    <a href="#" class="er">Learner reviews</a>
+    <a href="#" class="er">Sylladus</a><br>
+   <div class="lie"><a href="#" class="er">More courses</a>
+    <a href="#" class="er">Accreditation</a></div>
+     </div>
+ </div>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+<footer class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h3>About our platform</h3>
+          <p>Our platform provides the latest educational curricula to develop skills in life.</p>
+        </div>
+  
+        <div class="col-md-3 mb-4">
+          <h3>Quick links</h3>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-dark">Lessons</a></li>
+            <li><a href="#" class="text-dark">Educational programs</a></li>
+            <li><a href="#" class="text-dark">Certificates</a></li>
+            <li><a href="#" class="text-dark">Blog</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-3 mb-4">
+          <h3>Contact us</h3>
+          <p>e-mail: sbka@gmail.com</p>
+          <p>Phone number: 01037892157</p>
+          <div class="social-icons">
+            <a href="#" class="text-de00a5 me-3"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="text-de00a5 me-3"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="text-de00a5"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+  
+        <div class="col-md-3 mb-4">
+          <h3>Subscribe now</h3>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your e-mail" required>
+              <button type="submit" class="btn btn-de00a5">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+  
+      <div class="text-center mt-4">
+        <p>&copy; All right reserved. Learning platform, 2024</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Facebook Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        /* إعدادات الشريط العلوي */
+        .navbar {
+            background-color: #3b5998;
+            position: fixed; /* تجعل الشريط ثابت */
+            top: 0; /* يثبت الشريط في أعلى الصفحة */
+            left: 0; /* يبدأ من الجهة اليسرى */
+            right: 0; /* يمتد حتى الجهة اليمنى */
+            background-color: white; /* لون خلفية الشريط */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* ظل أسفل الشريط */
+            z-index: 1000; /* يجعل الشريط فوق العناصر الأخرى */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px; /* حواف الشريط */
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .logo img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
+        .navbar .search-bar input {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .menu div, .navbar .menu button {
+            margin-left: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .navbar .menu div .notification {
+            background-color: red;
+            border-radius: 50%;
+            color: white;
+            font-size: 12px;
+            padding: 2px 5px;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+        }
+
+        .navbar .menu div img {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+        }
+
+        /* إعدادات الشريط الثاني */
+        .sub-navbar {
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 10px;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        .sub-navbar .left-menu, .sub-navbar .right-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .sub-navbar .left-menu div, .sub-navbar .right-menu div {
+            margin-right: 15px;
+            cursor: pointer;
+            color: #555;
+        }
+
+        .sub-navbar .left-menu div.active {
+            color: #3b5998;
+            border-bottom: 2px solid #3b5998;
+            padding-bottom: 5px;
+        }
+         /* Cover Photo */
+         .cover-photo {
+            height: 400px; /* زيادة ارتفاع الصورة لجعلها أكثر وضوحاً */
+            width: 100%; /* تأكيد أن عرض القسم 100% من الصفحة */
+            background-size: cover; /* لتغطية المساحة بالكامل */
+            background-position: center; /* مركز الصورة */
+            position: relative; /* لجعل المحتوى داخل الصورة يتناسب */
+            display: flex; /* استخدام الفليكس لتوسيع المحتوى */
+            justify-content: center; /* توسيط المحتوى أفقياً */
+            align-items: center; /* توسيط المحتوى عمودياً */
+        }
+
+        .add-cover {
+            background: rgba(0, 0, 0, 0.8); /* خلفية سوداء مع شفافية */
+            color: #fff; /* لون النص */
+            padding: 10px 20px; /* مساحة داخلية */
+            border-radius: 5px; /* زوايا مدورة */
+            cursor: pointer; /* تغيير شكل المؤشر عند المرور */
+            opacity: 0.9; /* شفافية */
+            transition: opacity 0.3s; /* تأثير الانتقال عند تغيير الشفافية */
+        }
+
+        .add-cover:hover {
+            opacity: 1; /* جعل النص غير شفاف عند المرور */
+        }
+        
+        .container { display: flex; max-width: 1100px; margin: 20px auto; background: #ffffff; border: 1px solid #ddd; border-radius: 8px; height: 100%; }
+
+        /* Sidebar Styling */
+        .sidebar { width: 25%; background: #ffffff; padding: 15px; border-right: 1px solid #ddd; }
+        .profile-pic { width: 100px; height: 100px; ; border-radius: 50%; margin: auto; position: relative; }
+        .profile-pic::after { content: "+"; position: absolute; bottom: 5px; right: 5px; background: #1877f2; color: #fff; border-radius: 50%; padding: 2px 5px; font-size: 20px; }
+        .sidebar p { text-align: center; color: #666; margin-top: 10px; font-size: 14px; }
+        .sidebar nav { display: flex; flex-direction: column; margin-top: 20px; }
+        .sidebar nav a { color: #333; text-decoration: none; margin: 8px 0; font-size: 16px; }
+        .sidebar .promote-btn { display: block; background: #1877f2; color: #fff; text-align: center; padding: 8px; border-radius: 5px; margin-top: 15px; }
+
+        /* Main Content Styling */
+        .main-content { width: 75%; padding: 15px; display: flex; flex-direction: column; height: 100%; }
+/* Buttons Styling */
+.buttons { display: flex; align-items: center; margin: 10px 0; }
+        .buttons .btn { display: flex; align-items: center; background: #e9ebee; color: #333; padding: 6px 12px; border-radius: 5px; margin-right: 10px; font-size: 14px; cursor: pointer; }
+        .buttons .btn:hover { background: #d1d1d1; }
+        .buttons .btn i { margin-left: 5px; }
+
+        /* Last Button Styling */
+        .buttons .btn.last-btn { background: #1877f2; color: #fff; margin-left: auto; }
+        .buttons .btn.last-btn:hover { background: #165dd7; }
+
+        /* Info Section Styling */
+        .info-section { display: flex; flex-grow: 1; margin-top: 15px; }
+
+        /* Left Section */
+        .info-section .left { width: 25%; background: #f9fafb; padding: 10px 15px; border: 1px solid #ddd; border-radius: 8px; height: 100%; display: flex; flex-direction: column; gap: 10px; }
+
+        /* New Subsections in Left Section */
+        .left .subsection { background: #ffffff; padding: 10px; border: 1px solid #ddd; border-radius: 5px; }
+        .left .subsection h3 { font-size: 14px; color: #333; margin: 0 0 5px; }
+        .left .subsection p { font-size: 12px; color: #666; margin: 0; }
+        .left .subsection .invite-btn { background: #1877f2; color: #fff; padding: 5px; border-radius: 4px; cursor: pointer; font-size: 12px; display: inline-block; }
+
+        /* Right Section */
+        .info-section .right { flex-grow: 1; background: #f9fafb; padding: 10px 15px; border: 1px solid #ddd; border-radius: 8px; margin-left: 10px; height: 100%; }
+        .info-section .right h3 { font-size: 16px; color: #333; margin: 0 0 10px; }
+        .info-section .right p { font-size: 14px; color: #666; margin: 0 0 10px; }
+
+        /* Full Height Section */
+        .full-height-section { flex-grow: 1; background: #f9fafb; padding: 10px 15px; border: 1px solid #ddd; border-radius: 8px; margin-top: 15px; }
+        body { font-family: Arial, sans-serif; background-color: #f0f2f5; margin: 0; padding: 0; }
+
+        .container { max-width: 1100px; margin: 20px auto; background: #ffffff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; }
+
+        h2, h3 { color: #333; }
+
+        /* تصميم الجزء الخاص بمعلومات أخرى */
+        .other-info { margin-top: 20px; }
+        .image-section { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 15px; }
+        .image-card { background: #f9fafb; border: 1px solid #ddd; border-radius: 8px; padding: 10px; width: calc(33.33% - 10px); text-align: center; }
+        .image-card img { max-width: 100%; border-radius: 5px; }
+        .likes { display: flex; justify-content: center; align-items: center; margin-top: 10px; }
+        .likes i { color: #1877f2; margin-right: 5px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .image-card { width: calc(50% - 10px); }
+        }
+
+        @media (max-width: 480px) {
+            .image-card { width: 100%; }
+        }
+
+        .section { width: 75%; margin: auto; } /* لتحديد مساحة القسم الجديد */
+        .post-section { margin-top: 20px; background: #f9fafb; padding: 10px; border-radius: 8px; }
+        .post-section textarea { width: 100%; height: 60px; border-radius: 5px; border: 1px solid #ddd; padding: 10px; }
+        .post-section .submit-btn { background: #1877f2; color: #fff; padding: 8px 15px; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+        .post-section .submit-btn:hover { background: #165dd7; }
+        .search-container {
+    width: 25%; /* 25% من عرض الصفحة */
+    max-width: 300px; /* يمكنك تحديد الحد الأقصى للعرض */
+    margin-left: 11px;
+   height: 220px;
+   
+   
+}
+
+.search-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.search-box p {
+    font-size: px;
+    font-weight: bold;
+    color: #333;
+}
+
+.friends-list {
+    display: flex;
+    flex-direction: column;
+}
+.friend-item {
+    display: flex; /* استخدام Flexbox لتنسيق العناصر داخل كل عنصر من الأصدقاء */
+    align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+    justify-content: space-between; /* توزيع المساحة بين الصورة وزر الدعوة */
+    margin-bottom: 10px; /* إضافة مسافة بين عناصر الأصدقاء */
+
+}
+
+.friend-item img {
+    max-width: 50px; /* تحديد عرض الصورة */
+    height: auto; /* الحفاظ على نسبة الأبعاد */
+    margin-right: 70px;
+}
+
+.invite-button {
+    background-color:  #d3d3d3; /* لون خلفية الزر */
+    color: black; /* لون النص */
+    border: none;
+    border-radius: 7px;
+    padding: 5px 10px; /* مساحة متساوية حول الزر */
+    display: inline-block; /* يجعل الزر يأخذ عرض الكلمة فقط */
+}
+
+.invite-button:hover {
+    background-color: #c7008c; /* لون الخلفية عند تمرير المؤشر */
+}
+.recent-stories {
+            width: 100%; /* ملء العرض الكامل للمساحة المخصصة */
+            max-width: 300px; /* تحديد أقصى عرض للقسم */
+            background-color: #ffffff; /* لون خلفية القسم - أبيض */
+            padding: 10px; /* إضافة مسافة داخلية */
+            border-radius: 10px; /* زوايا مدورة */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* إضافة ظل ثلاثي الأبعاد */
+            transition: transform 0.2s; /* تأثير الانتقال عند التحويم */
+            margin-left: -10px;
+        }
+
+        .recent-stories:hover {
+            transform: scale(1.05); /* تكبير القسم عند التحويم */
+        }
+
+        .recent-stories h2 {
+            text-align: center; /* توسيط العنوان */
+            margin-bottom: 10px; /* مسافة تحت العنوان */
+            color: #090909; /* لون عنوان القسم - أزرق فيسبوك */
+            font-size: 1.2em; /* حجم خط أكبر قليلاً */
+        }
+
+        .add-story {
+            display: flex; /* استخدام Flexbox لتنسيق الزر والنص */
+            align-items: center; /* محاذاة العناصر عموديًا في المنتصف */
+            justify-content: center; /* توسيط العناصر أفقيًا */
+            margin-bottom: 10px; /* مسافة تحت زر إضافة القصة */
+            cursor: pointer; /* تغيير شكل المؤشر عند المرور */
+            background-color: #e7f3ff; /* لون خلفية الزر - لون فاتح */
+            color: #1877f2; /* لون النص - أزرق فيسبوك */
+            padding: 8px 10px; /* إضافة مسافة داخلية للزر */
+            border-radius: 5px; /* زوايا مدورة للزر */
+            border: 1px solid #1877f2; /* إضافة حد أزرق */
+            font-size: 1em; /* حجم خط الزر */
+        }
+
+        .add-story:hover {
+            background-color: #d0e4ff; /* تغيير اللون عند التحويم - لون أغمق */
+        }
+
+        .story-container {
+            display: flex; /* استخدام Flexbox لتنسيق الصور */
+            justify-content: space-around; /* توزيع الصور بالتساوي */
+            flex-wrap: wrap; /* السماح للصور بالتفاف */
+        }
+
+        .story-image {
+            width: 60px; /* عرض الصورة */
+            height: 60px; /* ارتفاع الصورة */
+            border-radius: 5px; /* زوايا مدورة للصورة */
+            margin: 5px; /* إضافة مسافة بين الصور */
+            transition: transform 0.2s; /* تأثير الانتقال عند التحويم */
+            border: 2px solid #e7f3ff; /* إضافة حد فاتح للصورة */
+        }
+
+        .story-image:hover {
+            transform: scale(1.1); /* تكبير الصورة عند التحويم */
+        }
+        .keywords {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+            font-size: 18px; /* حجم أكبر للكلمات */
+            background-color: #fff; /* خلفية بيضاء */
+            padding: 10px; /* إضافة مساحة داخلية */
+            border-radius: 5px; /* زوايا دائرية */
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* ظل خفيف */
+        }
+
+        .keyword-item {
+            display: flex;
+            align-items: center;
+            color: #333;
+            font-weight: bold; /* زيادة سمك الخط */
+            margin: 0 10px; /* المسافة حول الكلمات */
+        }
+
+        .keyword-item i {
+            margin-right: 5px;
+
+        }
+.fa-video{
+    color: red;
+}
+.fa-image{
+    color: greenyellow;
+}
+.fa-calendar-alt{
+    color: rgb(0, 170, 255);
+}
+/* Booster Section */
+.booster {
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .booster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f2f5; /* تأثير تدرج مظلم */
+            border-radius: 8px;
+        }
+
+        .booster-content {
+            position: relative;
+            z-index: 1; /* وضع المحتوى فوق الخلفية */
+            color: #666;
+        }
+
+        .booster h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .booster p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e7f3ff; /* لون خلفية الزر - لون فاتح */
+            color: #0e0e0f; /* لون النص - أزرق فيسبوك */
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: #ff3366; /* لون الزر عند المرور عليه */
+        }
+        .booster {
+        padding: 20px;
+        text-align: center;
+        color: white; /* لون النص الأساسي */
+    }
+
+    .booster-content {
+        position: relative;
+        z-index: 1; /* لضمان ظهور النص فوق الخلفية */
+    }
+
+    .glow-text {
+        font-size: 1.5em; /* حجم الخط */
+        animation: glow 1.5s infinite alternate; /* تطبيق التأثير */
+        text-shadow: 0 0 10px rgba(255, 165, 0, 1), /* لون توهج */
+                     0 0 20px rgba(255, 165, 0, 1),
+                     0 0 30px rgba(255, 165, 0, 1);
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 10px rgba(165, 42, 42, 1),
+                         0 0 20px rgba(165, 42, 42, 1),
+                         0 0 30px rgba(165, 42, 42, 1); /* بداية اللون */
+        }
+        25% {
+            text-shadow: 0 0 10px rgba(210, 105, 30, 1),
+                         0 0 20px rgba(210, 105, 30, 1),
+                         0 0 30px rgba(210, 105, 30, 1); /* تغيير اللون */
+        }
+        50% {
+            text-shadow: 0 0 10px rgba(139, 69, 19, 1),
+                         0 0 20px rgba(139, 69, 19, 1),
+                         0 0 30px rgba(139, 69, 19, 1); /* تغيير اللون */
+        }
+        75% {
+            text-shadow: 0 0 10px rgba(160, 82, 45, 1),
+                         0 0 20px rgba(160, 82, 45, 1),
+                         0 0 30px rgba(160, 82, 45, 1); /* تغيير اللون */
+        }
+        100% {
+            text-shadow: 0 0 10px rgba(139, 69, 19, 1),
+                         0 0 20px rgba(139, 69, 19, 1),
+                         0 0 30px rgba(139, 69, 19, 1); /* نهاية اللون */
+        }
+    }
+
+    .btn-cta {
+        background-color: #ff6347; /* لون زر CTA */
+        color: white; /* لون النص على الزر */
+        border: none; /* إزالة الحدود */
+        border-radius: 5px; /* زوايا مدورة */
+        padding: 10px 20px; /* إضافة مسافة داخلية */
+        font-size: 1em; /* حجم الخط */
+        cursor: pointer; /* تغيير شكل المؤشر */
+        transition: background-color 0.3s; /* تأثير الانتقال عند التحويم */
+    }
+
+    .btn-cta:hover {
+        background-color: #ff4500; /* لون الزر عند التحويم */
+    }
+    .intro-section {
+        width: 100%; /* العرض الكامل للقسم */
+        padding: 20px; /* إضافة مسافة داخلية */
+        margin: 20px 0; /* هامش عمودي */
+        text-align: center; /* محاذاة النص إلى الوسط */
+    }
+
+    .edit-bio-container {
+        width: 25%; /* عرض زر Edit Bio 25% من الصفحة */
+        margin: 20px auto; /* محاذاة الزر في المنتصف */
+    }
+
+    .intro-section h2 {
+        font-size: 24px; /* حجم خط العنوان */
+        margin-bottom: 10px; /* هامش أسفل العنوان */
+        color: #333; /* لون العنوان */
+        margin-left: -50px;
+    }
+
+    .intro-section p {
+        font-size: 16px; /* حجم خط النص */
+        margin-bottom: 20px; /* هامش أسفل النص */
+        color: #666; /* لون النص */
+    }
+
+    .btn-edit {
+        background-color: #d3d3d3; /* لون خلفية الزر (رصاصي فاتح) */
+        color: black; /* لون النص على الزر (أسود) */
+        border: none; /* إزالة الحدود */
+        border-radius: 5px; /* زوايا مدورة */
+        padding: 10px 20px; /* إضافة مسافة داخلية */
+        font-size: 16px; /* حجم خط الزر */
+        cursor: pointer; /* تغيير شكل المؤشر */
+        transition: background-color 0.3s; /* تأثير الانتقال عند التحويم */
+        width: 100%; /* جعل الزر يأخذ العرض الكامل للمساحة المخصصة */
+        margin-left: -50px;
+    }
+
+    .btn-edit:hover {
+        background-color: #c0c0c0; /* لون الزر عند التحويم */
+    }
+    .posts-section {
+        width: 75%; /* عرض القسم 75% */
+        padding: 20px; /* إضافة مسافة داخلية */
+       
+        border-radius: 8px; /* زوايا مدورة */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* تأثير ظل خفيف */
+      padding-bottom: 0px;
+      padding-top: 0px;
+      
+    }
+    .create-post {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .create-post textarea {
+            width: 100%;
+            height: 60px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            resize: none;
+        }
+
+        .post-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .upload-label {
+            background-color: #3b5998;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .post-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .posts-feed {
+            margin-top: 15px;
+        }
+
+        .post {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-pic {
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .user-name {
+            font-weight: bold;
+        }
+
+        .post-time {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .post-content {
+            margin-top: 10px;
+        }
+
+        .post-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .post-actions button {
+            background: none;
+            border: none;
+            color: #3b5998;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .post-actions button i {
+            margin-left: 5px;
+        }
+
+        .post-actions button:hover {
+            text-decoration: underline;
+        }
+    
+
+    .posts-section h2 {
+        font-size: 24px; /* حجم خط العنوان */
+        color: #333; /* لون العنوان */
+    }
+
+    .controls {
+        display: flex; /* استخدام flexbox لترتيب العناصر */
+        align-items: center; /* محاذاة العناصر في المنتصف */
+    }
+    .create-post {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .create-post textarea {
+            width: 100%;
+            height: 60px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            resize: none;
+        }
+
+        .post-options {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+
+        .upload-label {
+            background-color: #3b5998;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .post-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .posts-feed {
+            margin-top: 15px;
+        }
+
+        .post {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .post-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-pic {
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-left: 10px;
+        }
+
+        .user-name {
+            font-weight: bold;
+        }
+
+        .post-time {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .post-content {
+            margin-top: 10px;
+        }
+
+        .post-content img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .post-actions button {
+            background: none;
+            border: none;
+            color: #3b5998;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .post-actions button i {
+            margin-left: 5px;
+        }
+
+        .post-actions button:hover {
+            text-decoration: underline;
+        }
+    .filter, .settings {
+        display: flex; /* استخدام flexbox لترتيب النص والأيقونة */
+        align-items: center; /* محاذاة العناصر في المنتصف */
+        color: #555; /* لون النص */
+        margin-left: 20px; /* مسافة بين العناصر */
+        cursor: pointer; /* تغيير شكل المؤشر عند المرور */
+    }
+
+    .filter-text, .settings-text {
+        margin-right: 5px; /* مسافة بين النص والأيقونة */
+    }
+    .n{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+.y{
+width: 100%;
+height: 100%;
+}
+.user-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .user-pic {
+            width: 40px;
+            height: 40px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin-left: 10px;
+            background-image: url('img/ةةةةة.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .user-name {
+            font-weight: bold;
+        }
+
+        .post-time {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .post-content {
+            margin-top: 10px;
+        }
+
+        .post-images {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .post-images img {
+            width: 48%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .post-actions {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+        }
+
+        .post-actions button {
+            background: none;
+            border: none;
+            color: #3b5998;
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .post-actions button i {
+            margin-left: 5px;
+        }
+
+        .post-actions button:hover {
+            text-decoration: underline;
+        }
+        .carousel-container {
+        width: 100%; /* عرض الشريط 100% من المساحة المتاحة له */
+        max-width: 800px; /* تعيين الحد الأقصى للعرض */
+        overflow: hidden;
+        border: 2px solid #ccc;
+        border-radius: 8px; /* إضافة زوايا دائرية */
+        position: relative;
+        background-color: #fff; /* خلفية بيضاء */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* ظل خفيف حول الشريط */
+        margin: auto; /* توسيط العنصر */
+    }
+    .carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+    }
+    .product {
+        min-width: 23%; /* عرض المنتج */
+        margin: 10px;
+        padding: 20px;
+        background-color: #f3f3f3;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .product:hover {
+        box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.8), 0 0 30px 15px rgba(255, 140, 0, 0.6), 0 0 40px 20px rgba(255, 69, 0, 0.4); /* تأثير التوهج القوي */
+        transform: scale(1.05); /* تكبير بسيط للمربع */
+    }
+    .register-button {
+        display: block;
+        width: 150px;
+        margin: 20px auto;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #fff;
+        background-color: #d2691e;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        transition: box-shadow 0.3s ease; /* تأثير انتقال سلس */
+    }
+    .register-button:hover {
+        background-color: #a0522d;
+        box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.8); /* تأثير توهج */
+        animation: glow 1s infinite alternate; /* إضافة تأثير توهج عند التحويم */
+    }
+    @keyframes glow {
+        0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 10px rgba(255, 255, 255, 0.5); }
+        100% { text-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 255, 255, 0.9); }
+    }   
+    /* Booster Section */
+.booster {
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            color: rgb(255, 255, 255);
+            text-align: center;
+            margin-top: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .booster::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f0f2f5; /* تأثير تدرج مظلم */
+            border-radius: 8px;
+        }
+
+        .booster-content {
+            position: relative;
+            z-index: 1; /* وضع المحتوى فوق الخلفية */
+            color: #666;
+        }
+
+        .booster h4 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .booster p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn-cta {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            background-color: #e7f3ff; /* لون خلفية الزر - لون فاتح */
+            color: #0e0e0f; /* لون النص - أزرق فيسبوك */
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-cta:hover {
+            background-color: #ff3366; /* لون الزر عند المرور عليه */
+        }
+        .booster {
+        padding: 20px;
+        text-align: center;
+        color: white; /* لون النص الأساسي */
+    }
+
+    .booster-content {
+        position: relative;
+        z-index: 1; /* لضمان ظهور النص فوق الخلفية */
+    }
+
+    .glow-text {
+        font-size: 1.5em; /* حجم الخط */
+        animation: glow 1.5s infinite alternate; /* تطبيق التأثير */
+        text-shadow: 0 0 10px rgba(255, 165, 0, 1), /* لون توهج */
+                     0 0 20px rgba(255, 165, 0, 1),
+                     0 0 30px rgba(255, 165, 0, 1);
+    }
+
+    @keyframes glow {
+        0% {
+            text-shadow: 0 0 10px rgba(165, 42, 42, 1),
+                         0 0 20px rgba(165, 42, 42, 1),
+                         0 0 30px rgba(165, 42, 42, 1); /* بداية اللون */
+        }
+        25% {
+            text-shadow: 0 0 10px rgba(210, 105, 30, 1),
+                         0 0 20px rgba(210, 105, 30, 1),
+                         0 0 30px rgba(210, 105, 30, 1); /* تغيير اللون */
+        }
+        50% {
+            text-shadow: 0 0 10px rgba(139, 69, 19, 1),
+                         0 0 20px rgba(139, 69, 19, 1),
+                         0 0 30px rgba(139, 69, 19, 1); /* تغيير اللون */
+        }
+        75% {
+            text-shadow: 0 0 10px rgba(160, 82, 45, 1),
+                         0 0 20px rgba(160, 82, 45, 1),
+                         0 0 30px rgba(160, 82, 45, 1); /* تغيير اللون */
+        }
+        100% {
+            text-shadow: 0 0 10px rgba(139, 69, 19, 1),
+                         0 0 20px rgba(139, 69, 19, 1),
+                         0 0 30px rgba(139, 69, 19, 1); /* نهاية اللون */
+        }
+    }
+    .btn-cta {
+        background-color: #ff6347; /* لون زر CTA */
+        color: white; /* لون النص على الزر */
+        border: none; /* إزالة الحدود */
+        border-radius: 5px; /* زوايا مدورة */
+        padding: 10px 20px; /* إضافة مسافة داخلية */
+        font-size: 1em; /* حجم الخط */
+        cursor: pointer; /* تغيير شكل المؤشر */
+        transition: background-color 0.3s; /* تأثير الانتقال عند التحويم */
+    }
+
+    .btn-cta:hover {
+        background-color: #ff4500; /* لون الزر عند التحويم */
+    }
+    .see-more-container {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .see-more-button {
+            background-color: #ff7f50; /* لون الخلفية */
+            color: white; /* لون النص */
+            padding: 10px 20px; /* حجم الزر */
+            border: none; /* إزالة الحدود */
+            border-radius: 5px; /* زوايا دائرية */
+            cursor: pointer; /* شكل المؤشر عند التمرير */
+            transition: background-color 0.3s; /* تأثير الانتقال */
+            font-size: 10px; /* حجم الخط */
+        }
+
+        .see-more-button:hover {
+            background-color: #ff6347; /* تغيير اللون عند التمرير */
+        }
+
+        .icon {
+            margin-right: 8px; /* مساحة بين الأيقونة والنص */
+            font-size: 24px; /* حجم الأيقونة */
+        }
+
+        .arrow {
+            font-size: 24px; /* حجم السهم */
+            margin-left: 8px; /* مساحة بين الزر والسهم */
+            transform: rotate(90deg); /* تدوير السهم ليتجه للأسفل */
+        }
+    </style>
+</head>
+<body>
+    <!-- الشريط العلوي -->
+    <div class="navbar">
+        <div class="logo">
+            <img src="img/ةةةةة.jpg" alt="Facebook Logo">
+            <div class="search-bar">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        <div class="menu">
+            <div>Home</div>
+            <div>Create</div>
+            <div>
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+                <i class="fa-regular fa-bell"></i>
+                <span class="notification">2</span>
+            </div>
+            <div>
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-circle-question"></i>
+                <span class="notification">5</span>
+            </div>
+            <div>Help</div>
+        </div>
+    </div>
+<br><br><br>
+    <!-- الشريط الثاني -->
+    <div class="sub-navbar">
+        <div class="left-menu">
+            <div class="active">Page</div>
+            <div>Inbox</div>
+            <div>Notifications</div>
+            <div>Insights</div>
+            <div>Publishing Tools</div>
+            <div>Ad Center</div>
+            <div>More</div>
+            
+        </div>
+        <div class="right-menu">
+            <div>Edit Page Info</div>
+            <div>Settings</div>
+            
+            <div>Help</div>
+        </div>
+    </div>
+    <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="profile-pic"> <img src="img/ةةةةة.jpg" class="y"></div>
+        <p>Create Page @Username</p>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Posts</a>
+            <a href="#">Reviews</a>
+            <div class="see-more-container">
+            
+                <button class="see-more-button">See More</button>
+                <span class="arrow">></span> <!-- السهم يشير للأسفل -->
+            </div>
+        </nav>
+        <div class="promote-btn">Promote</div>
+    </div>
+<!-- المحتوى الرئيسي -->
+<div class="main-content">
+    <div class="cover-photo" style="background-image: url('img/ةةةة.webp');">
+       
+    </div>
+ <!-- Buttons -->
+ <div class="buttons">
+    <div class="btn">Like <i class="fas fa-thumbs-up"></i></div>
+    <div class="btn">Share <i class="fas fa-share"></i></div>
+    <div class="btn">Follow <i class="fas fa-user-plus"></i></div>
+    <div class="btn">Edit Page Info <i class="fas fa-edit"></i></div>
+    <div class="btn last-btn">Add a Button <i class="fas fa-plus"></i></div>
+</div>
+
+<!-- Info Section -->
+<div class="info-section">
+    <!-- Left Section -->
+    <div class="left">
+        <!-- Intro Section -->
+        <div class="intro-section">
+            <h2>Intro</h2>
+            <h2>Welcome to "Afaq Online Courses"!</h2>
+            <p>Afaq is an innovative educational platform aimed at providing diverse and high-quality educational content for learners worldwide. We believe that learning is the key to success, and we strive to offer a flexible and comprehensive learning experience that meets the needs of students in various fields.
+
+            </p>
+            <a href="edit-bio.html">
+                <button class="btn-edit">Edit Bio</button>
+            </a>
+        </div>
+                        <!-- Invite Friends Section -->
+                        <div class="subsection">
+                            
+                            <div class="search-container">
+                                <div class="search-box">
+                                    <input type="text" placeholder="Search for friends to invite" class="search-input">
+                                </div>
+                                <div class="friends-list">
+                                    <div class="friend-item">
+                                        <img src="img/c3.png" alt="Friend 1">
+                                        <button class="invite-button" style="display: flex; justify-content: flex-end;">Invite</button>
+                                    </div>
+                                    <div class="friend-item">
+                                        <img src="img/c4.png" alt="Friend 2">
+                                        <button class="invite-button" style="display: flex; justify-content: flex-end;">Invite</button>
+                                    </div>
+                                    <div class="friend-item">
+                                        <img src="img/c2.png" alt="Friend 3">
+                                        <button class="invite-button" >Invite</button>
+                                    </div>
+                                </div>
+                            </div><br>
+                            
+                            <div class="recent-stories">
+                                <h2>Show Your Recent Stories</h2>
+                                <div class="add-story" onclick="addStory()">
+                                    <span>+</span>
+                                    <span>Add Story</span>
+                                </div>
+                                <div class="story-container">
+                                    <img src="img/421883460_821252260016021_3441122061792321503_n.jpg" alt="Story 1" class="story-image">
+                                    <img src="img/thumbnail_0ca42500-415d-4e53-a636-3364ad02fe46.webp" alt="Story 2" class="story-image">
+                                    <img src="img/thumbnail_59359d44-f391-4258-a82d-d9d549390980.webp" alt="Story 3" class="story-image">
+                                    <!-- يمكنك إضافة المزيد من الصور هنا -->
+                                </div>
+                            </div>
+                            
+                            
+                        </div>
+        <script>
+              function addStory() {
+                alert("Add your story!"); // يمكنك استبدال هذا برسالة أو نافذة أخرى لإضافة قصة
+                // يمكنك إضافة الكود اللازم هنا لفتح نافذة رفع الصور أو أي وظيفة أخرى تريدها
+            }
+        </script>
+                        <!-- Other Sections -->
+                        
+                    </div>
+        
+                    <!-- Right Section -->
+                    <div class="right">
+                        <h3>معلومات الصفحة</h3>
+                        <!-- New Post Section -->
+                <div class="post-section">
+                    <div class="create-post">
+                        <textarea placeholder="ماذا يخطر ببالك؟"></textarea>
+                        <div class="post-options">
+                            <input type="file" id="image-upload" accept="image/*" />
+                            <label for="image-upload" class="upload-label">إضافة صورة</label>
+                            <button class="post-button">نشر</button>
+                        </div>
+                    </div>
+                     <!-- Keywords Section -->
+                     <div class="keywords">
+                        <div class="keyword-item">
+                            <i class="fas fa-video" ></i>
+                            <span>Live Video</span>
+                        </div>
+                        <div class="keyword-item">
+                            <i class="fas fa-image" ></i>
+                            <span>Photo/Video</span>
+                        </div>
+                        <div class="keyword-item">
+                            <i class="fas fa-calendar-alt" ></i>
+                            <span>Events</span>
+                        </div>
+                    </div>
+                </div>
+        
+               <!-- Booster Section -->
+               <div class="booster" style="background-image: url('img/booster-background.jpg');">
+                <div class="booster-content">
+                    <h4 class="glow-text">احصل على خصم 20% على الدورات التدريبية!</h4>
+                    <p class="glow-text">سجل الآن واكتشف مهارات جديدة في مجالات متعددة. الفرصة أمامك، لا تفوتها!</p>
+                    <a href="index.html">
+                        <button class="btn btn-cta">سجل الآن</button>
+                    </a>
+                </div>
+            </div>
+          <br>
+          <!-- Posts Section -->
+          <div class="posts-section" style="width: 95%; margin-left: -8px;">
+            <div class="posts-header">
+                <div class="n">
+                <h2>Posts</h2>
+                <div class="controls">
+                    <div class="filter">
+                        <span class="filter-text">Filter</span>
+                        <i class="fas fa-filter"></i> <!-- أيقونة الفلتر -->
+                    </div>
+                    <div class="settings">
+                        <span class="settings-text">Settings</span>
+                        <i class="fas fa-cog"></i> <!-- أيقونة الإعدادات -->
+                    </div>
+                </div>
+                </div>
+            </div> 
+            <div class="posts-feed">
+                <div class="post">
+                    <div class="post-header">
+                        <div class="user-info">
+                            <div class="user-pic"></div>
+                            <span class="user-name">Afaq online courses</span>
+                        </div>
+                        <span class="post-time">منذ 10 دقائق</span>
+                    </div>
+                    <div class="post-content">
+                        <h3>Programming(Front End Courses)</h3>
+                        <img src="img/421883460_821252260016021_3441122061792321503_n.jpg" alt="Post Image" />
+                    </div>
+                    <div class="post-actions">
+                        <button onclick="likePost(this)">
+                            <i class="fas fa-thumbs-up"></i> Like
+                        </button>
+                        <button onclick="commentPost(this)">
+                            <i class="fas fa-comment"></i> Comment
+                        </button>
+                        <button onclick="sharePost()">
+                            <i class="fas fa-share"></i> Share
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="post">
+                <div class="post-header">
+                    <div class="user-info">
+                        <div class="user-pic"></div>
+                        <span class="user-name">Afaq online courses</span>
+                    </div>
+                    <span class="post-time">منذ 10 دقائق</span>
+                </div>
+                <div class="post-content">
+                    <h2>Languge Courses</h2>
+                    <div class="post-images">
+                        <img src="img/رر.webp" alt="Post Image 1">
+                        <img src="img/ررر.jpg" alt="Post Image 2">
+                    </div>
+                </div>
+                <div class="post-actions">
+                    <button onclick="likePost(this)">
+                        <i class="fas fa-thumbs-up"></i> Like
+                    </button>
+                    <button onclick="commentPost(this)">
+                        <i class="fas fa-comment"></i> Comment
+                    </button>
+                    <button onclick="sharePost()">
+                        <i class="fas fa-share"></i> Share
+                    </button>
+                </div>
+            </div>
+            <div class="post">
+                <div class="post-header">
+                    <div class="user-info">
+                        <div class="user-pic"></div>
+                        <span class="user-name">Afaq online courses</span>
+                    </div>
+                    <span class="post-time">منذ 10 دقائق</span>
+                </div>
+                <div class="post-content">
+                    <h3>Programming Courses</h3>
+                    <div class="post-images">
+                        <img src="img/421328548_821252300016017_4371849457503941726_n.jpg" alt="Post Image 1">
+                        <img src="img/421283316_821252353349345_771925598527621719_n.jpg" alt="Post Image 2">
+                    </div>
+                </div>
+                <div class="post-actions">
+                    <button onclick="likePost(this)">
+                        <i class="fas fa-thumbs-up"></i> Like
+                    </button>
+                    <button onclick="commentPost(this)">
+                        <i class="fas fa-comment"></i> Comment
+                    </button>
+                    <button onclick="sharePost()">
+                        <i class="fas fa-share"></i> Share
+                    </button>
+                </div>
+            </div>
+            
+<div class="carousel-container">
+    <div class="carousel" id="carousel">
+        <div class="product">Business & Management</div>
+        <div class="product">Creative Arts & Media</div>
+        <div class="product">IT & Computer Science</div>
+        <div class="product">Language</div>
+        <div class="product">History</div>
+    </div>
+</div>
+
+<!-- زر "سجل الآن" تحت شريط المنتجات -->
+<button class="register-button">سجل الآن</button>
+<div class="post">
+    <div class="post-header">
+        <div class="user-info">
+            <div class="user-pic"></div>
+            <span class="user-name">Afaq online courses</span>
+        </div>
+        <span class="post-time">منذ 10 دقائق</span>
+    </div>
+    <div class="post-content">
+        <h2>Business & Management Courses</h2>
+        <div class="post-images">
+            <img src="img/1.webp" alt="Post Image 1">
+            <img src="img/3.webp" alt="Post Image 2">
+        </div>
+    </div>
+    <div class="post-actions">
+        <button onclick="likePost(this)">
+            <i class="fas fa-thumbs-up"></i> Like
+        </button>
+        <button onclick="commentPost(this)">
+            <i class="fas fa-comment"></i> Comment
+        </button>
+        <button onclick="sharePost()">
+            <i class="fas fa-share"></i> Share
+        </button>
+    </div>
+</div>
+<div class="post">
+    <div class="post-header">
+        <div class="user-info">
+            <div class="user-pic"></div>
+            <span class="user-name">Afaq online courses</span>
+        </div>
+        <span class="post-time">منذ 10 دقائق</span>
+    </div>
+    <div class="post-content">
+       <h2>Healthcare & Medicine online courses</h2>
+        <div class="post-images">
+            <img src="img/0.webp" alt="Post Image 1">
+            <img src="img/00000.jpg" alt="Post Image 2">
+        </div>
+    </div>
+    <div class="post-actions">
+        <button onclick="likePost(this)">
+            <i class="fas fa-thumbs-up"></i> Like
+        </button>
+        <button onclick="commentPost(this)">
+            <i class="fas fa-comment"></i> Comment
+        </button>
+        <button onclick="sharePost()">
+            <i class="fas fa-share"></i> Share
+        </button>
+    </div>
+</div>
+
+             </div>
+        
+               
+        </div>
+        <script>
+            function likePost(button) {
+                let likes = button.querySelector(".like-count");
+                if (!likes) {
+                    likes = document.createElement("span");
+                    likes.className = "like-count";
+                    likes.textContent = " 1";
+                    button.appendChild(likes);
+                } else {
+                    let count = parseInt(likes.textContent.trim()) + 1;
+                    likes.textContent = " " + count;
+                }
+            }
+    
+            function commentPost(button) {
+                alert("فتح قسم التعليقات لإضافة تعليق");
+            }
+    
+            function sharePost() {
+                alert("تمت مشاركة المنشور بنجاح!");
+            }
+        </script> 
+        <script> 
+          const carousel = document.getElementById("carousel");
+          let carouselWidth = carousel.scrollWidth / carousel.children.length;
+          let scrollAmount = 0;
+      
+          function moveCarousel() {
+              scrollAmount += carouselWidth;
+              carousel.style.transform = `translateX(-${scrollAmount}px)`;
+      
+              if (scrollAmount >= carousel.scrollWidth - carouselWidth * 2) {
+                  setTimeout(() => {
+                      scrollAmount = 0;
+                      carousel.style.transition = 'none';
+                      carousel.style.transform = 'translateX(0)';
+                      setTimeout(() => {
+                          carousel.style.transition = 'transform 0.5s ease';
+                      }, 50);
+                  }, 500);
+              }
+          }
+      
+          setInterval(moveCarousel, 2000);
+        </script>
+</body>
+</html>

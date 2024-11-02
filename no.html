@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Denied - Course Subscription</title>
+    <style>
+        /* Reset and basic styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #7b2cbf, #c77dff, #f0a6ca);
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            color: #fff;
+            padding: 2rem;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.8;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+
+        .home-btn {
+            background-color: #f72585;
+        }
+
+        .subscribe-btn {
+            background-color: #480ca8;
+        }
+
+        .home-btn:hover {
+            background-color: #ff6d9c;
+        }
+
+        .subscribe-btn:hover {
+            background-color: #560bad;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-30px); }
+            to { transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>أنت غير مشترك في هذا الكورس المدفوع</h2>
+        <p>اشترك الآن للوصول إلى محتوى حصري وتعلم متقدم!</p>
+        <div class="buttons">
+            <button class="home-btn" onclick="goToHome()">العودة إلى الصفحة الرئيسية</button>
+            <button class="subscribe-btn" onclick="subscribe()">اشترك الآن</button>
+        </div>
+    </div>
+
+    <script>
+        function goToHome() {
+            // Redirect to home page
+            window.location.href = "index.html";
+        }
+
+        function subscribe() {
+            // Placeholder for subscription functionality
+            alert("سيتم توجيهك إلى صفحة الاشتراك قريبًا.");
+        }
+    </script>
+</body>
+</html>

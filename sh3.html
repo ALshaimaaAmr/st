@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <!-- إضافة مكتبة Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            width: 250px;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #ff00ff;
+        }
+
+        /* الفيديو */
+        .video-container {
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .img-small {
+            width: 80%;
+            height: auto;
+            max-width: 600px;
+        }
+
+        /* الشريط السفلي */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 250px;
+            width: calc(100% - 250px);
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .bottom-bar button {
+            background-color: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #ff66ff;
+        }
+
+        /* الأيقونات العلوية */
+        .top-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .top-icons a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .top-icons a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        /* تنسيق النص */
+        .resilience-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+      <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+</head>
+<body>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar">
+        <h6> Open now</h6>
+        <ul class="list-unstyled">
+            <li class="week"> <a href="sh3.html">
+                Welcome from Katie
+                
+                </a></li>
+            <li class="week"><a href="sh4.html">
+                Getting to know you
+                
+                Discussion</a></li>
+            <li class="week"><a href="sh5.html">
+                Interview nerves
+                
+                Exercise</a></li>
+          
+        </ul>
+    </div>
+
+    <!-- قسم المحتوى -->
+    <div class="content">
+        <div class="container">
+            <!-- شريط التقدم -->
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        1.2 You've completed 1 step in Week 1
+                    </div>
+                </div>
+            </div>
+
+            <!-- الأيقونات العلوية -->
+            <div class="top-icons">
+                <a href="todo.html" target="_blank">To do</a>
+                <a href="conversations.html" target="_blank">Conversations</a>
+                <a href="progress.html" target="_blank">Progress</a>
+            </div>
+
+            <!-- الفيديو -->
+            <div class="video-container">
+                <video
+            id="video-player"
+            class="video-js vjs-default-skin vjs-big-play-centered"
+            controls
+            preload="none"
+            poster="//view.vzaar.com/10027826/image"
+            data-setup='{"fluid": true}'
+        >
+            <!-- Video sources -->
+            <source src="//view.vzaar.com/10027826/adaptive.m3u8" type="application/x-mpegURL">
+            <source src="//view.vzaar.com/10027826/video" type="video/mp4">
+            <!-- Caption track -->
+            <track src="https://ugc.futurelearn.com/uploads/files/7a/7b/7a7bfa54-5db6-4c9f-8e99-fc0cef6540f3/Welcome_from_Katie.vtt" kind="subtitles" srclang="en" label="English">
+            <!-- Fallback message for unsupported browsers -->
+            Your browser does not support the video tag.
+        </video>
+            </div>
+
+            <!-- النص تحت الصورة -->
+            <div class="resilience-text">
+                <h1>Can we learn resilience?</h1><br><br>
+                <p>778 comments</p><br><br>
+                <h4>Popular culture tells us heroes are special, but resilience research tells us there are plenty of everyday heroes.</h4><br><br>
+                <p>He certainly has to be resilient to overcome all the challenges thrown at him.</p><br><br>
+                <p>Film heroes who go on these kinds of adventures often simply crash through with one ingenious stunt after another. Star Wars has plenty of stunts, but it also presents Luke’s adventure as a process of coming to trust his inner voice.</p><br><br>
+                <p>Luke not only learns from the wise master Obi-Wan Kenobi and the earthy Han Solo, but also learns to draw on his own inner strength and resources. He learns to trust ‘the Force’.</p><br><br>
+                <p>This is what psychologists would call developing a sense of ‘self-efficacy’: a confidence in your ability to complete the task at hand. This is a complex skill to learn, but it can be learnt and it’s crucial to developing resilience.</p><br><br>
+               <h2>Your Task</h2><br><br>
+               <p>‘Use the force, Luke’ – the voice of his mentor that Luke Skywalker hears at crucial moments in his journey – has become a poster, a cliche and a joke. Yet it expresses something important about our ability to overcome the odds when we find our inner resolve.</p><br><br>
+               <p>Have there been times in your life where you’ve made decisions based on trusting your inner instinct?</p><br><br>
+               <p>What gets in the way of this?</p><br><br>
+               <p>What types of skills do we need to develop to help us differentiate between a helpful inner voice and a reckless impulse?</p><br><br>
+               <p>Share your thoughts and stories in the comments and reply to at least one other learner to extend the discussion.</p><br><br>
+                <p>© Deakin University</p>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- الشريط السفلي -->
+    <div class="bottom-bar">
+        <button><a href="" style="color: #fff; text-decoration: none;">Previous</a></button>
+        <button id="toggleButton" onclick="toggleComplete()">Mark as complete</button>
+        <button><a href="sh4.html" style="color: #fff; text-decoration: none;">Next</a></button>
+    </div>
+
+    <!-- إضافة مكتبة jQuery و Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript لتغيير النص عند الضغط على الزر -->
+    <script>
+        function toggleComplete() {
+            const button = document.getElementById("toggleButton");
+            if (button.innerHTML.trim() === "Mark as complete") {
+                button.innerHTML = '<span>&#10003;</span> Step completed';
+            } else {
+                button.innerHTML = 'Mark as complete';
+            }
+        }
+    </script>
+     <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+</body>
+</html>

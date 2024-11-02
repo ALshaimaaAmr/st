@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World War 1 Through Art and Film</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Basic Styles */
+        h1, h2, h3, h4 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        p, .complete-btn {
+            margin: 10px 0;
+            text-align: center;
+            color: #555;
+        }
+
+        a {
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-100px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        /* Apply Animations */
+        .animate {
+            animation: fadeIn 1s ease-out forwards;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
+        }
+
+        .title-section {
+            animation: scaleIn 1.5s ease-out forwards;
+        }
+
+        .map-image {
+            max-width: 100%;
+            margin: 10px auto;
+            display: block;
+            animation: slideIn 1.2s ease-out forwards;
+        }
+
+        /* Button Styles */
+        .complete-btn {
+            background-color: #de00a5; /* Fuchsia color */
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .complete-btn:hover {
+            background-color: #b30086; /* Slightly darker fuchsia on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Main Title Section -->
+        <section class="title-section animate">
+            <h1>Welcome to the Course</h1>
+            <p class="subtitle">6 Comments</p>
+            <h2>Welcome to World War 1 through Art and Film</h2>
+        </section>
+
+        <!-- Course Introduction -->
+        <section class="intro-section animate">
+            <p>This course is designed by the University of Leeds to help school and college students transition to university or the workplace. We also welcome other learners; you will have seen from the welcome area that we have a diverse cohort signed up.</p>
+        </section>
+
+        <!-- Course Map -->
+        <section class="map-section animate">
+            <h3>Course Map</h3>
+            <p>Click the image to access the course map, or download it from the Downloads section below.</p>
+            <img src="img/شن.webp" alt="Course Map" class="map-image">
+        </section>
+
+        <!-- Weekly Tasks Overview -->
+        <section class="tasks-section animate">
+            <h3>Weekly Tasks Overview</h3>
+            <p>It’s anticipated that this week’s tasks will take around two hours to complete, including watching videos, joining discussions, reading articles, and completing exercises.</p>
+        </section>
+
+        <!-- Week 1 -->
+        <section class="week-section animate">
+            <h4>Week 1</h4>
+            <p>In the first week, we look at recruitment posters and their messages for both soldiers and civilians. Research World War 1 art and reflect on a painting representing notions of heroism during the war.</p>
+        <img src="img/شنب.webp" alt="">
+        </section>
+
+        <!-- Week 2 -->
+        <section class="week-section animate">
+            <h4>Week 2</h4>
+            <p>Explore contemporary German film and prepare a review of a recent book, film, or TV program about the First World War. Ideas are available in the Downloads section.</p>
+        </section>
+
+        <!-- Comments Section -->
+        <section class="comments-section animate">
+            <h3>Have Your Say</h3>
+            <p>Use the comments to share your reasons for joining this course. If you find someone with similar interests, consider ‘following’ them to filter discussions.</p>
+        </section>
+
+        <!-- Social Media Interaction -->
+        <section class="social-section animate">
+            <h3>Social Media Interaction</h3>
+            <p>If mentioning the course on social media, tag comments with #FLww1Art. Follow us on <a href="#">Twitter</a> or <a href="#">Facebook</a> for updates.</p>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="next-steps animate">
+            <h3>Next Steps</h3>
+            <p>When you’re ready to move on, click ‘Mark as complete.’ Track your progress in the 'Progress' section.</p>
+            <button class="complete-btn">Mark as Complete</button>
+        </section>
+    </div>
+</body>
+</html>

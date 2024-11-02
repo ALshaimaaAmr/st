@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/mdb.min.css" />
+    <link rel="stylesheet" href="ررر.css">
+    <title>صفحة إنستجرام</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+
+    <style> 
+      body {
+          display: flex;
+          height: 100vh;
+          margin: 0;
+      }
+      .sidebar {
+          width: 250px;
+          background-color: #f9f9f9;
+          height: 100vh;
+          padding: 20px;
+          box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      }
+      .profile-pic {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          object-fit: cover;
+          border: 2px solid #D62976;
+      }
+      .btn-instagram {
+          background: linear-gradient(45deg, #D62976, #962FBF, #4F5BD5);
+          color: white;
+      }
+      .sidebar a {
+        text-decoration: none;
+        color: #000;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+      }
+      .sidebar a:hover {
+          background-color: #eaeaea;
+      }
+      .logo {
+            font-size: 2rem;
+            color: #D62976;
+            text-align: center;
+            margin-bottom: 20px;
+      }
+      .content {
+          flex-grow: 1;
+          padding: 20px;
+          overflow-y: auto;
+      }
+      .profile-divider {
+          border: none;
+          height: 2px;
+          background-color: #4c4949;
+          margin: 20px 0;
+      }
+      .stories-container {
+          display: flex;
+          overflow-x: auto;
+          padding:10px;
+      }
+      .story {
+          width: 100px;
+          height: 100px;
+          margin-right: 30px;
+          border-radius: 50%;
+          overflow: hidden;
+          border: 2px solid #D62976;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .story img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+      }
+      .story:hover {
+          transform: scale(1.1);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      .container {
+          position: relative;
+      }
+      .dropdown{
+        padding-left: 281px;
+      }
+      .section {
+          text-align: center;
+          padding: 10px;
+          cursor: pointer;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+      }
+      .section i {
+          font-size: 1.2rem;
+          margin-right: 5px;
+      }
+      .line {
+          position: absolute;
+          height: 2px;
+          background-color: #343032;
+          bottom: 100%;
+          transition: left 0.3s ease;
+          left: 0;
+          z-index: 1;
+          margin-bottom: 25px;
+      }
+      .section.active {
+          color: #1b1919;
+      }
+      .gallery img {
+          width: 100%;
+          height: 400px;
+          object-fit: cover;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .gallery img:hover {
+          transform: scale(1.05);
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+      #taggedGallery {
+          display: none;
+          width: 100%;
+          margin: 20px 0;
+          text-align: center;
+      }
+
+      @media (max-width: 768px) {
+          .sidebar {
+              width: 100%;
+              height: auto;
+              position: relative;
+          }
+          .content {
+              padding: 10px;
+          }
+          .gallery img {
+              width: 100%;
+              height: auto;
+          }
+          .profile-pic {
+              width: 100px;
+              height: 100px;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .sidebar {
+              padding: 10px;
+          }
+          .story {
+              width: 80px;
+              height: 80px;
+          }
+          .section {
+              flex-direction: column;
+              margin-bottom: 10px;
+          }
+      }
+       /* إعداد أساسي للنص */
+    .me-3 {
+        font-size: 1.7em; /* حجم النص */
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+        animation: color-change 2s infinite alternate; /* تفعيل الحركة */
+    }
+
+    /* تعريف الحركة */
+    @keyframes color-change {
+        0% { color: #ff1493; } /* لون الفوشيا */
+        100% { color: #981c96; } /* لون الوردي */
+    }
+     .xx{
+        color: white;
+        background-color:#ff1493 ;
+        padding: 10px; /* مساحة داخلية حول النص */
+        border-radius: 5px; 
+        display: inline-block; /* جعل الخلفية تناسب النص */
+     }
+    </style>
+</head>
+<body>
+  <div class="sidebar">
+    <div class="text-center mb-4">
+        <div class="logo">
+            <i class="fab fa-instagram"></i>
+        </div>
+        <img src="img/in.webp" alt="شعار إنستجرام" class="img-fluid mb-3">
+    </div>
+    <a href="#"><i class="fas fa-home"></i> Home</a>
+    <a href="#"><i class="fas fa-search"></i> Search</a>
+    <a href="#"><i class="fas fa-compass"></i> Explore</a>
+    <a href="#"><i class="fas fa-video"></i> Reels</a>
+    <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+    <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+    <a href="#"><i class="fas fa-plus-circle"></i> Create</a>
+    <a href="#"><i class="fas fa-user"></i> Profile</a>
+    <a href="#"><i class="fas fa-comments"></i> Threads</a>
+    <a href="#"><i class="fas fa-ellipsis-h"></i> More</a>
+  </div>
+  <div class="content">
+    <div class="row align-items-center">
+        <div class="col-md-2 text-center">
+            <img src="img/لبخبفيه.jpg" alt="صورة البروفايل" class="profile-pic mb-3">
+        </div>
+        <h5 class="me-3">AFAQ ONLINE COURCES</h5>
+        <div class="col-md-7">
+            <div class="d-flex align-items-center">
+                <div class="dropdown">
+                    <button class="btn btn-instagram dropdown-toggle me-2" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" onclick="handleFollowClick()">
+                        Following
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li><a class="dropdown-item" href="#" onclick="handleUnfollowClick()">Unfollow</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="handleMuteClick()">Mute</a></li>
+                        <li><a class="dropdown-item" href="#" onclick="handleReportClick()">Report</a></li>
+                    </ul>
+            
+                    <button class="btn btn-instagram me-2" onclick="handleMessageClick()">Message</button>
+                    <button class="btn btn-instagram me-2" onclick="handleAddFriendClick()">
+                        <i class="fas fa-user-plus"></i> Add Friend
+                    </button>
+                    <button class="btn btn-instagram me-2" data-bs-toggle="modal" data-bs-target="#blockModal">
+                        <i class="fas fa-ellipsis-h"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="d-flex align-items-center justify-content-end mb-2">
+              <span class="text-muted me-5"><strong>230 posts</strong></span>
+              <span class="text-muted me-5"><strong>19.4K followers</strong></span>
+              <span class="text-muted me-5"><strong>150 Following</strong></span>
+          </div>
+            <h4 class="text-muted">
+                Afaq Online Courses مرحبا بك ف<br> حيث تلتقي الطموحات التعليمية بأفضل التجارب التفاعلية! نقدم لك مجموعة واسعة من الدورات التعليمية المصممة بعناية لمساعدتك على اكتساب المهارات والمعرفة التي تحتاجها لبناء مستقبل مشرق. انضم إلينا الآن لتخطو أولى خطواتك نحو آفاق جديدة في مسيرتك التعليمية والمهنية."
+            </h4>
+        </div>
+    </div>
+    
+<div class="stories-container">
+  <div class="story">
+      <img src="img/ءءء.webp" alt="Story 1" />
+  </div>
+  <div class="story">
+      <img src="img/ؤر.webp" alt="Story 2" />
+  </div>
+  <div class="story">
+      <img src="img/الخلفية.jpg" alt="Story 3" />
+  </div>
+  <div class="story">
+      <img src="img/را.webp" alt="Story 4" />
+  </div>
+  <div class="story">
+      <img src="img/thumbnail_2cf6618b-1080-4b15-b6bf-744799045345.webp" alt="Story 5" />
+  </div>
+</div>
+<hr class="profile-divider">
+    
+    <div class="container">
+        <div class="d-flex justify-content-around mb-4">
+            <div class="section active" onclick="toggleGallery('postsGallery', this)">
+                <i class="fas fa-images"></i> Posts
+                <div class="line"></div>
+            </div>
+            <div class="section" onclick="toggleGallery('reelsGallery', this)">
+                <i class="fas fa-video"></i> Reels
+                <div class="line"></div>
+            </div>
+            <div class="section" onclick="toggleGallery('taggedGallery', this)">
+                <i class="fas fa-tag"></i> Tagged
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <div id="postsGallery" class="gallery">
+            <h5 class="xx">If You Are Interested With Languages </h5>
+            <div class="row">
+                <div class="col-4 mb-3"><img src="img/ر.jpg" alt="Post 1" /></div>
+                <div class="col-4 mb-3"><img src="img/رر.webp" alt="Post 2" /></div>
+                <div class="col-4 mb-3"><img src="img/ررر.jpg" alt="Post 3" /></div>
+                <div class="col-4 mb-3"><img src="img/رررر.webp" alt="Post 4" /></div>
+                <div class="col-4 mb-3"><img src="img/ررررر.jpg" alt="Post 5" /></div>
+                <div class="col-4 mb-3"><img src="img/رررررر.webp" alt="Post 6" /></div>
+            </div>
+        </div>
+
+        <div id="reelsGallery" class="gallery" style="display: none;">
+            <h5 class="xx">If You Are Interested With Business & Management </h5>
+            <div class="row">
+                <div class="col-4 mb-3"><img src="img/1.webp" alt="Reel 1" /></div>
+                <div class="col-4 mb-3"><img src="img/2.webp" alt="Reel 2" /></div>
+                <div class="col-4 mb-3"><img src="img/3.webp" alt="Reel 3" /></div>
+                <div class="col-4 mb-3"><img src="img/5.jpg" alt="Reel 4" /></div>
+                <div class="col-4 mb-3"><img src="img/6.webp" alt="Reel 5" /></div>
+                <div class="col-4 mb-3"><img src="img/7.jpg" alt="Reel 6" /></div>
+            </div>
+        </div>
+
+        <div id="taggedGallery" class="gallery" style="display: none;">
+            <h5 class="xx">If You Are Interested With IT & Computer Science </h5>
+            <div class="row">
+                <div class="col-4 mb-3"><img src="img/ا.jpg" alt="Tagged 1" /></div>
+                <div class="col-4 mb-3"><img src="img/اا.webp" alt="Tagged 2" /></div>
+                <div class="col-4 mb-3"><img src="img/ااا.webp" alt="Tagged 3" /></div>
+                <div class="col-4 mb-3"><img src="img/اااا.webp" alt="Tagged 4" /></div>
+                <div class="col-4 mb-3"><img src="img/1111111.webp" alt="Tagged 5" /></div>
+                <div class="col-4 mb-3"><img src="img/11111.webp" alt="Tagged 6" /></div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center mt-5">
+        <p>جميع الحقوق محفوظة © 2024</p>
+    </footer>
+</div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+    function toggleGallery(galleryId, element) {
+      // الحصول على المعرض المحدد
+      const selectedGallery = document.getElementById(galleryId);
+      
+      // التحقق من حالة العرض الحالي
+      const isVisible = selectedGallery.style.display === 'block';
+  
+      // إخفاء جميع المعارض
+      document.querySelectorAll('.gallery').forEach(gallery => gallery.style.display = 'none');
+      // إزالة وتحديد القسم النشط
+      document.querySelectorAll('.section').forEach(section => section.classList.remove('active'));
+  
+      if (!isVisible) {
+        // إذا لم يكن المعرض مرئيًا، نعرضه
+        selectedGallery.style.display = 'block';
+        element.classList.add('active');
+      } 
+    }
+  
+    // تعيين المعرض الافتراضي ليظهر عند تحميل الصفحة
+    window.onload = function() {
+      toggleGallery('postsGallery', document.querySelector('.section'));
+    };
+  </script>
+  <script>
+    function handleFollowClick() {
+        alert('تم اتباع المستخدم!'); // يمكنك استبدال هذا بسلوك حقيقي
+    }
+
+    function handleUnfollowClick() {
+        alert('تم إلغاء المتابعة!'); // يمكنك استبدال هذا بسلوك حقيقي
+    }
+
+    function handleMuteClick() {
+        alert('تم كتم المستخدم!'); // يمكنك استبدال هذا بسلوك حقيقي
+    }
+
+    function handleReportClick() {
+        alert('تم الإبلاغ عن المستخدم!'); // يمكنك استبدال هذا بسلوك حقيقي
+    }
+
+    function handleMessageClick() {
+        alert('فتح صندوق الرسائل!'); // يمكنك استبدال هذا بسلوك حقيقي
+    }
+
+    function handleAddFriendClick() {
+        alert('تم إرسال طلب الصداقة!'); // يمكنك استبدال هذا بسلوك حقيقي
+    }
+
+    // بقية الشيفرة...
+</script>
+
+</body>
+</html>

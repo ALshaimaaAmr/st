@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <!-- إضافة رابط CSS لـ Video.js -->
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+</head>
+<body>
+    <div data-test-id="20706678">
+        <div class="video-module_wrapper__IEuQv">
+            <video 
+                id="video-20706678"
+                class="video-js vjs-default-skin vjs-big-play-centered" 
+                controls 
+                preload="auto" 
+                width="640" 
+                height="264"
+                poster="https://view.vzaar.com/20706678/image"
+                data-setup="{}"
+            >
+                <!-- روابط الفيديو -->
+                <source src="https://view.vzaar.com/20706678/adaptive.m3u8" type="application/x-mpegURL">
+                <source src="https://view.vzaar.com/20706678/download/sd_lower" type="video/mp4">
+                <track src="https://ugc.futurelearn.com/uploads/files/d7/bd/d7bd6967-b473-4c4f-862c-ad9f99ceaf25/SC1_-_Cathedral.vtt" kind="subtitles" srclang="en" label="English">
+                <!-- نص يعرض إذا كانت JavaScript معطلة -->
+                <p>Unable to play video. Please enable JavaScript or consider upgrading your browser.</p>
+            </video>
+        </div>
+    </div>
+
+    <!-- إضافة رابط JavaScript لـ Video.js -->
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+</body>
+</html>

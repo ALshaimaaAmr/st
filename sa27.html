@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <!-- إضافة مكتبة Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            width: 250px; /* ثابت للعرض */
+        }
+
+        .content {
+            margin-left: 270px; /* ترك مسافة للشريط الجانبي */
+            padding: 20px;
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #ff00ff;
+        }
+
+        /* الفيديو */
+        .video-container {
+            width: 670px;
+            height: 290px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0px;
+        }
+
+        .img-small {
+            width: 70%; /* استخدام نسبة مئوية لتحديد عرض الصورة */
+            height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+            max-width: 600px; /* تحديد الحد الأقصى لعرض الصورة */
+        }
+
+        /* الشريط السفلي */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 250px; /* تبدأ من نهاية الشريط الجانبي */
+            width: calc(100% - 250px); /* يأخذ العرض الكامل باستثناء عرض الشريط الجانبي */
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .bottom-bar button {
+            background-color: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #ff66ff;
+        }
+
+        /* الأيقونات العلوية */
+        .top-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .top-icons a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .top-icons a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        /* تنسيق النص */
+        .resilience-text {
+            text-align: center; /* محاذاة النص في المنتصف */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar">
+        <h6> Open now</h6>
+       
+        <ul class="list-unstyled">
+            <li class="week"> <a href="sa26.html">Let's get started - Video</a></li>
+            <li class="week"><a href="sa27.html">1.2 Learning online with Deakin - Video</a></li>
+            <li class="week"><a href="sa28.html">1.3 What helps us become resilient? - Discussion</a></li>
+            <li><a href="sa29.html">What is resilience and why is it important?</a></li>
+            <li><a href="sa30.html">Learning to become resilient</a></li>
+        </ul>
+        
+    </div>
+    <!-- قسم المحتوى -->
+    <div class="content">
+        <div class="container">
+            <!-- شريط التقدم -->
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        1.2 You've completed 1 step in Week 1
+                    </div>
+                </div>
+            </div>
+
+            <!-- الأيقونات العلوية -->
+            <div class="top-icons">
+                <a href="todo.html" target="_blank">To do</a>
+                <a href="conversations.html" target="_blank">Conversations</a>
+                <a href="progress.html" target="_blank">Progress</a>
+            </div>
+
+            <!-- الفيديو -->
+            <div class="video-container">
+                <img src="img/ب.jpg" class="img-small" alt="Resilience Image" >
+            </div>
+       
+            <div>
+            <h4>Welcome & Introductions</h4><br>
+            <p>445  command</p><br>
+            <p>Welcome! During a pandemic, these are difficult times for everyone. But we also feel this forum is well suited to nourishing the social interactions we all so need to thrive as human beings – and if you discover something new about history in the process, all the better!</p>
+            <p>In this first step, we will introduce ourselves, and tell you a little bit about the purpose of this course – and why we hope it may make a difference to your lives. Big words? Well, let us try to explain… </p><br>
+            <p>We, the creators of this course, are a team of historians. Or rather, we are a team of people who work, in one way or another, with historical materials. And we all share one belief: history matters! History shapes the world we inhabit, and it shapes the way we look at and understand the world – for better or for worse. We cannot “overcome” history. But we can understand how it works, and become freer to form our own critical judgements.</p><br>   
+            <p>So who, exactly, are we? One of the unique features of this course is that it emerges from collaborations of those who “curate” the historical record – who collect, select, catalogue, make accessible and exhibit its raw materials – , and those who “interpret” this record, who make it their job to study and write about historical events.</p><br>
+             <p>The academics in the course come from the universities of Nottingham and Birmingham. We cannot introduce all of them here, but we do want you to “meet” the lead educators, who you will frequently see on your screen over the next three weeks:</p><br>
+            <p>Maiken Umbach is Professor of Modern History at the University of Nottingham. She has published widely on aspects of European history, identity politics, and memory culture from the 18th to the 20th centuries; her current research project concerns the way photography, professional and private, shapes the way we imagine Nazism. Dean Blackburn is lecturer in modern British history at Nottingham. She works on political ideologies, from socialism to conservatism, that informed British parliamentary politics in the post-war period. Alex Henry is a research fellow at Nottingham; he completed a PhD on the history British Intelligence in the Second World War. </p><br>
+            <p>Then there is the team from the British Library. It has been led and coordinated by Ian Cooke, who is responsible for the Library’s collections of 21st century UK publications. He has a particular passion for “odd publications” – pamphlets, fliers, posters – and is quite an expert of the First World War in particular.</p><br>
+            <p>Throughout this course, the four of us will be the lead educators – that is, we will monitor discussions, and answer all the questions you pose as best as we can. But we did not create this course on our own. Important learning steps were provided by others. First, there are the many, many curators at the British Library, such as those who look after specialist collections, including image and map archives, and also those in charge of its most cutting-edge digital initiatives, such as the recorded sound archive, and the web archive. The learning steps they have created for you will give you a unique insight into how the raw material of history is collected, and made accessible. </p><br>
+            <p>Conversations with experts - Professor Kate Cain, Lancaster University, United Kingdom, will discuss reading comprehension difficulties and how to develop children’s understanding of written texts with Professor Judit Kormos. Dr. Margaret Crombie will share ideas about how to help dyslexic students acquire modern foreign languages.</p><br>
+            <p> We also drew on the expertise of other colleagues from the Universities of Nottingham and Birmingham. They include academics from many disciplines besides History. For example, Linguistics professors will introduce you to some new techniques for analysing large bodies of text from the past. In addition, experts from Departments of Politics and Area Studies will introduce particular topics, such as political ideologies, the histories of slavery, and environmental history, to name but a few.</p><br>
+            <p>Together, we have created this course, which is all about empowerment. We do not explain history here, and we do not seek to compete with popular history books or TV channels, which each present a ready-made historical narrative. We are here to help you develop your own research skills, and form your own, independent judgements about the past and the present.</p><br>
+            <p>But the course also presents arguments for why we should care about history at all. History, we argue in various of the following steps, shapes the way in which we understand our present. It has many valuable lessons to offer. But it also gets in the way. The way we understand the world around us is shaped by the legacies of history everywhere we look. Political problems are rooted in particular histories. But here’s the crux: even when we want to criticize those histories, we inevitably use a language to do so that is itself a history.</p><br>
+            <p>This is a problem rarely reflected on in popular history books or TV channels. But it is worth thinking. And this course is designed to help you to do that. We will “teach” history to you. We want to help you discover it for yourself, and give you the critical tools to evaluate the ready-made histories you will encounter in other media.</p><br>
+            <p>The idea for creating this course first emerged from our previous experience with online learning about history. In 2015, a team of British Library curators and University of Nottingham academics, from 9 different academic subjects or “disciplines” (History, Politics, Sociology, Psychology and so forth…), and from across Nottingham’s three campuses (in the UK, China, and Malaysia) created a FutureLearn course on “Propaganda and Ideology in Everyday Life”. It has since run three times, and attracted about 25,000 people. Together, our learners left over 60,000 comments, and uploaded a fascinating archive of their own images. We were struck by their enthusiasm, and by the extensive use they made of links to further academic works we provided. People from all walks of life, it seems, are eager to learn more about the history of propaganda and ideology.</p><br>
+            <p>But this experience also gave us pause for thought. In creating learning steps that provided bite-sized digests of the latest historical research, we felt we had not really given those who participated in these discussions the skills required to make the best use of the resources we introduced on their own. This is how the idea for THIS course was born.</p><br>
+            <p>“Learning from the Past” is all about access: access to the fabulous and often little known resources of the British Library – but also access to the skills you need to use them. The first challenge is often to discover the right material. We will introduce you to tools for finding what you are looking for – whether it is about navigating a complicated library catalogue, or planning your first visit to a historical archive. But access is also about knowing how to make use of what you find. What research questions are too broad for one person to tackle – and which ones are too narrow to answer your broader concerns? What is the difference between “primary sources” – the documents created by historical actors – and “secondary sources”, i.e. the work of researchers who have come before you? Which should you read first? And is the distinction always clear-cut?</p><br>
+            <p>In exploring these questions, and others, we very much encourage you to begin defining your own research project right from the start. When testing our methods and techniques – why not see how they can help you in finding out what you really want to discover? Perhaps you are interested in a very personal history: where did your family come from, who were they, and why have you ended up being who you are? Or perhaps you want to discover the origin of a big political problem you are concerned about? What are the historical reasons for inequality, for mass migration, or environmental degradation? Or perhaps you want to see if there are lessons we can learn from history: which forms of protest have been effective, which have not? Which political approaches have helped alleviate problems that still concerns us today – and which ones have (perhaps inadvertently) made them worse? We do not claim to provide answers to these questions. But we hope to equip you to answer them yourself.</p><br>
+            <p>The more you use this course to explore your own interests, the more you will get out of it!</p><br>
+            <h3>Get extra benefits, upgrade your course</h3><br>
+            <p>You can now get extra benefits by upgrading this course, including:</p><br>
+            <p>A Certificate of Achievement: To help you demonstrate your learning we’ll send you a Certificate of Achievement when you become eligible.</p><br>
+            <p>To see all the comments on a particular step, click the pink speech bubble icon. The number next to this icon tells you how many comments there are for this step. You can ‘Like’ comments that you find really useful or interesting, and ‘Follow’ the lead educators and other learners.</p><br>
+            <p>So to kick off with – why not introduce yourself to us and your fellow learners? We’re curious about who you are, what motivated you to sign up for this course, and what you hope to discover.</p><br>
+            <p>Unlimited access to the course: Go at your own pace with unlimited access to the course for as long as it exists on FutureLearn. </p><br>
+            <p>© University of Nottingham</p><br><br>
+        </div>
+            <!-- الشريط السفلي -->
+
+    <div class="bottom-bar">
+        <button><a href="sa26.html" style="color: #fff; text-decoration: none;">Previous</a></button>
+        <button id="toggleButton" onclick="toggleComplete()">Mark as complete</button>
+        <button><a href="sa28.html" style="color: #fff; text-decoration: none;">Next</a></button>
+    </div>
+
+    <!-- إضافة مكتبة jQuery و Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript لتغيير النص عند الضغط على الزر -->
+    <script>
+        function toggleComplete() {
+            const button = document.getElementById("toggleButton");
+            if (button.innerHTML.trim() === "Mark as complete") {
+                button.innerHTML = '<span>&#10003;</span> Step completed';
+            } else {
+                button.innerHTML = 'Mark as complete';
+            }
+        }
+    </script>
+</body>
+</html>

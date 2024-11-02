@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <!-- إضافة مكتبة Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            width: 250px;
+        }
+
+        .content {
+            margin-left: 270px;
+            padding: 20px;
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #ff00ff;
+        }
+
+        /* الفيديو */
+        .video-container {
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+
+        .img-small {
+            width: 80%;
+            height: auto;
+            max-width: 600px;
+        }
+
+        /* الشريط السفلي */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 250px;
+            width: calc(100% - 250px);
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .bottom-bar button {
+            background-color: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #ff66ff;
+        }
+
+        /* الأيقونات العلوية */
+        .top-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .top-icons a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .top-icons a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        /* تنسيق النص */
+        .resilience-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar">
+        <h6> Open now</h6>
+        <ul class="list-unstyled">
+            <li class="week"> <a href="sa21.html">Let's get started - Video</a></li>
+            <li class="week"><a href="sa22.html">1.2 Learning online with Deakin - Video</a></li>
+            <li class="week"><a href="sa23.html">1.3 What helps us become resilient? - Discussion</a></li>
+            <li><a href="sa24.html">What is resilience and why is it important?</a></li>
+            <li><a href="sa25.html">Learning to become resilient</a></li>
+        </ul>
+    </div>
+
+    <!-- قسم المحتوى -->
+    <div class="content">
+        <div class="container">
+            <!-- شريط التقدم -->
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        1.2 You've completed 1 step in Week 1
+                    </div>
+                </div>
+            </div>
+
+            <!-- الأيقونات العلوية -->
+            <div class="top-icons">
+                <a href="todo.html" target="_blank">To do</a>
+                <a href="conversations.html" target="_blank">Conversations</a>
+                <a href="progress.html" target="_blank">Progress</a>
+            </div>
+
+            <!-- الفيديو -->
+            <div class="video-container">
+                <img src="img/شش.jpg" class="img-small" alt="Resilience Image">
+            </div>
+
+            <!-- النص تحت الصورة -->
+            <div class="resilience-text">
+                <h1>The nature of reading difficulties</h1><br><br>
+                <p>44 comments</p><br><br>
+                <h4>In this interview Professor Kate Cain from Lancaster University explains the processes of reading comprehension, the difficulties children can have with understanding written texts and how parents and teachers can notice reading comprehension problems.</h4><br><br>
+                <p>Although the interview primarily focuses on first language readers, the nature of difficulties second language learners and students with additional languages in the classroom experience are very similar. </p><br><br>
+               <p>As you watch, think about how the issues discussed in this video apply to the students you work with. </p><br><br>
+               <h3>-Have you encountered students who showed particular difficulties with reading comprehension?</h3><br>
+               <h3>-How did you find out about these difficulties?</h3><br>
+               <h3>-How can lack of second/foreign language proficiency cause reading comprehension problems?</h3><br><br>
+               <h3>-Would students who have reading comprehension difficulties in another language, also have problems in their first language?</h3><br><br>
+               <p>© Lancaster University</p><br>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <!-- الشريط السفلي -->
+    <div class="bottom-bar">
+        <button><a href="sa24.html" style="color: #fff; text-decoration: none;">Previous</a></button>
+        <button id="toggleButton" onclick="toggleComplete()">Mark as complete</button>
+        <button><a href="" style="color: #fff; text-decoration: none;">Next</a></button>
+    </div>
+
+    <!-- إضافة مكتبة jQuery و Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript لتغيير النص عند الضغط على الزر -->
+    <script>
+        function toggleComplete() {
+            const button = document.getElementById("toggleButton");
+            if (button.innerHTML.trim() === "Mark as complete") {
+                button.innerHTML = '<span>&#10003;</span> Step completed';
+            } else {
+                button.innerHTML = 'Mark as complete';
+            }
+        }
+    </script>
+</body>
+</html>

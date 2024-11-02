@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <!-- إضافة مكتبة Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            width: 250px; /* ثابت للعرض */
+        }
+
+        .content {
+            margin-left: 270px; /* ترك مسافة للشريط الجانبي */
+            padding: 20px;
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #ff00ff;
+        }
+
+        /* الفيديو */
+        .video-container {
+            width: 670px;
+            height: 290px;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0px;
+        }
+
+        .img-small {
+            width: 70%; /* استخدام نسبة مئوية لتحديد عرض الصورة */
+            height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+            max-width: 600px; /* تحديد الحد الأقصى لعرض الصورة */
+            display: block;
+        }
+
+        /* الشريط السفلي */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 250px; /* تبدأ من نهاية الشريط الجانبي */
+            width: calc(100% - 250px); /* يأخذ العرض الكامل باستثناء عرض الشريط الجانبي */
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .bottom-bar button {
+            background-color: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #ff66ff;
+        }
+
+        /* الأيقونات العلوية */
+        .top-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .top-icons a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .top-icons a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        /* تنسيق النص */
+        .resilience-text {
+            text-align: center; /* محاذاة النص في المنتصف */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar">
+        <h6> Open now</h6>
+       
+        <ul class="list-unstyled">
+            <li class="week"> <a href="sh42.html">Let's get started </a></li>
+            <li class="week"><a href="sh43.html">1.2 Learning online with Deakin </a></li>
+            <li class="week"><a href="sh44.html">1.3 What helps us become resilient? - Discussion</a></li>
+        </ul>
+        
+    </div>
+    <!-- قسم المحتوى -->
+    <div class="content">
+        <div class="container">
+            <!-- شريط التقدم -->
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        1.2 You've completed 1 step in Week 1
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3>What is a project?</h3><br>
+                <p>261 comments</p><br>
+                <h2>In the purest sense, a project is: </h2><br>
+                <p>A unique set of coordinated activities, with definite starting and finishing points, undertaken by an individual or organisation to meet specific performance objectives within defined schedule, cost and performance parameters.</p><br>
+                <h4>(British Standards Institution, 2010)</h4><br>
+                <h2>The following definitions are also widely used: </h2><br>
+                <p>A project is a unique, transient endeavour, undertaken to achieve planned objectives, which could be defined in terms of outputs, outcomes or benefits. </p><br>
+                <h4>(Association for Project Management, 2012)</h4><br>
+                <p>The project is a temporary organisation that is created for the purpose of delivering one or more business products according to an agreed business case.</p><br>
+               <h4>(OGC, 2009) </h4><br>
+                <p>A temporary endeavour, undertaken to create a unique product, service or result. </p><br>
+               <h4>(Project Management Institute, 2013)</h4><br>
+               <h2>Your task</h2><br>
+               <p>Consider projects you have worked on or experienced. Describe the project to your fellow learners, explaining what characteristics made them a project.</p><br>
+                <p>Review the comments left by your peers and interact with each other as much as possible. Do you agree with their reasoning? Do you have any questions for them? Respond to at least one person and remember to like or bookmark any comments that you think are particularly good.</p><br>
+                <h6>Association for Project Management. (2012). APM body of knowledge.</h6><br>
+                <h6>British Standards Institution. (2010). BS 6079-1:2010 Part 1: project management. Principles and guidelines for the management of projects. </h6><br>
+                <p>© Coventry University. CC BY-NC 4.0 </p><br>
+            </div>
+    
+            <!-- الأيقونات العلوية -->
+            <div class="top-icons">
+                <a href="todo.html" target="_blank">To do</a>
+                <a href="conversations.html" target="_blank">Conversations</a>
+                <a href="progress.html" target="_blank">Progress</a>
+            </div>
+
+            <!-- الشريط السفلي -->
+
+    <div class="bottom-bar">
+        <button><a href="sh43.html" style="color: #fff; text-decoration: none;">Previous</a></button>
+        <button id="toggleButton" onclick="toggleComplete()">Mark as complete</button>
+        <button><a href="" style="color: #fff; text-decoration: none;">Next</a></button>
+    </div>
+
+    <!-- إضافة مكتبة jQuery و Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript لتغيير النص عند الضغط على الزر -->
+    <script>
+        function toggleComplete() {
+            const button = document.getElementById("toggleButton");
+            if (button.innerHTML.trim() === "Mark as complete") {
+                button.innerHTML = '<span>&#10003;</span> Step completed';
+            } else {
+                button.innerHTML = 'Mark as complete';
+            }
+        }
+    </script>
+</body>
+</html>

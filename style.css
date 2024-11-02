@@ -1,0 +1,408 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0; /* إزالة الهامش الافتراضي */
+    padding-top: 60px; /* إضافة مساحة أعلى المحتوى لتجنب تداخل المحتوى مع شريط التنقل الثابت */
+    background: linear-gradient(to right, #ffffff, #e6d9f5, #f8c8e0); /* الخلفية الجديدة */
+}
+
+.navbar {
+    position: fixed; /* جعل شريط التنقل ثابت */
+    top: 0; /* تأكيد أن شريط التنقل في أعلى الصفحة */
+    width: 100%; /* تأكيد أن العرض 100% */
+    z-index: 1000; /* التأكد من أن شريط التنقل يظهر فوق العناصر الأخرى */
+}
+
+.nav-item {
+    background: #de00a5;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0 10px; /* إضافة مسافة بين العناصر */
+}
+
+.courses-container,
+.industry-container,
+.hidden-section {
+    display: none;
+    margin-top: 20px;
+}
+
+.courses-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.courses-list div {
+    width: 30%;
+}
+
+.industry-list,
+.subject-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.industry-list li,
+.subject-list li {
+    padding: 5px 0;
+}
+
+.user-icon {
+    cursor: pointer;
+}
+
+.dropdown-menu a {
+    color: #de00a5;
+}
+
+/* إضافة مسافة أسفل كل عنصر في القائمة */
+.navbar-nav .nav-link {
+    margin-bottom: 10px;
+}
+
+/* إضافة هامش بين قائمة البحث والصورة المجاورة */
+.search-form {
+    margin-right: 20px; /* يمكنك تعديل القيمة حسب الحاجة */
+}/* تنسيق القسم */
+/* تنسيق القسم */
+.hidden-section {
+margin-top: 30px; /* مسافة أعلى القسم */
+padding: 20px; /* Padding داخل القسم */
+background-color: hsla(0, 0%, 100%, 0.5); /* لون خلفية للتفريق */
+border-radius: 10px; /* زوايا دائرية */
+}
+
+/* تنسيق قائمة المواد */
+.subject-list {
+list-style-type: none; /* إزالة النقاط من القائمة */
+padding: 0; /* إزالة الحواف */
+}
+
+.subject-list li {
+margin-bottom: 10px; /* المسافة بين العناصر */
+font-weight: 500; /* زيادة سمك الخط */
+}
+
+/* تنسيق الصور */
+.featured-images {
+display: flex;
+flex-wrap: wrap; /* السماح بلف الصور إلى الصفوف التالية */
+gap: 15px; /* المسافة بين الصور */
+}
+.featured-images .card {
+flex: 0 0 calc(50% - 15px); /* كل كارد تأخذ 50% من العرض مع اعتبار المسافة */
+transition: transform 0.3s ease, box-shadow 0.3s ease; /* تأثير سلس عند تغيير الخصائص */
+margin-bottom: 15px; /* إضافة مسافة أسفل كل كارد */
+max-height: 300px; /* ضبط الحد الأقصى للارتفاع */
+overflow: hidden; /* إخفاء أي محتوى يتجاوز الارتفاع */
+}
+
+/* تعديل عنوان الكارد لضبط المسافات */
+.featured-images .card-body {
+padding: 10px; /* تقليل padding داخل الكارد */
+}
+
+/* إضافة تخصيصات خاصة بالصورة لتقليل حجمها */
+.featured-images .card-img-top {
+max-height: 150px; /* ضبط الحد الأقصى لارتفاع الصورة */
+object-fit: cover; /* الحفاظ على تناسق الصورة داخل الكارد */
+}
+
+
+/* تأثير hover */
+.featured-images .card:hover {
+transform: scale(1.05); /* تكبير الصورة قليلاً عند مرور الماوس */
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* إضافة ظل عند مرور الماوس */
+}
+
+/* تعديلات للشاشات الصغيرة */
+@media (max-width: 768px) {
+.featured-images .card {
+flex: 0 0 100%; /* كل كارد تأخذ 100% على الشاشات الصغيرة */
+}
+}
+
+/* تنسيق عنوان الكارد */
+.featured-images .card-title {
+font-size: 1.2rem; /* حجم خط أكبر */
+text-align: center; /* محاذاة النص في المنتصف */
+}
+
+
+
+
+
+
+.footer-bottom {
+text-align: center;
+margin-top: 20px;
+border-top: 1px solid #34495e;
+padding-top: 20px;
+font-size: 14px;
+}
+
+.social-icons a {
+color: #de00a5;
+font-size: 25px;
+}
+
+.social-icons a:hover {
+color: #b72e71;
+}
+
+.btn-de00a5 {
+background-color: #de00a5;
+color: white;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.btn-de00a5:hover {
+background-color: #b72e71;
+}
+.card-subtitle {
+    font-size: 0.85rem;
+    color: black;
+}
+
+.rating {
+    font-size: 0.9rem;
+    color: black;
+}
+
+.btn-light {
+    background-color: #de00a5;
+    color: white;
+}
+
+.btn-light:hover {
+    background-color: #2541fc;
+    color: white;
+}
+
+.card-title {
+    color: black;
+    font-size: 1.25rem;
+}
+
+.card-body h6 {
+    color: black;
+    font-size: 1rem;
+}
+
+.card {
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-divider {
+    background-color: #f8f9fa; /* لون خلفية فاتح للقسم */
+    padding: 20px 0; /* مساحة داخلية للقسم */
+    border-radius: 8px; /* زوايا مستديرة */
+    margin: 40px 0; /* هامش خارجي */
+}
+
+.card-body .btn {
+    margin-top: auto; /* لضمان أن الزر دائمًا في الأسفل */
+}
+
+.c{
+background-color: white;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+padding: 50px;
+max-width: 300px;
+text-align: center;
+margin-top: 190px;
+margin-left: 980px;
+
+}
+
+.w {
+color: #333;
+font-size: 20px;
+margin-bottom: 10px;
+margin-left: 10px;
+}
+
+.rating {
+display: flex;
+justify-content: center;
+align-items: center;
+color: #EC407A;
+margin-bottom: 10px;
+margin-right: -20px;
+}
+
+
+.rating:hover {
+display: flex;
+justify-content: center;
+align-items: center;
+color: #0D47A1;
+margin-bottom: 10px;
+}
+
+.rating span {
+margin-right: 5px;
+}
+
+.ww {
+color: #666;
+margin-bottom: 15px;
+}
+
+.www {
+list-style: none;
+padding: 0;
+margin: 15px 0;
+}
+
+.wwww {
+margin-bottom: 10px;
+color: #424242;
+}
+
+.join-btn {
+background-color: #d600d6;
+color: white;
+border: none;
+border-radius: 5px;
+padding: 10px 80px;
+cursor: pointer;
+font-size: 1em;
+}
+
+.join-btn:hover {
+background-color: #0D47A1;
+}
+
+.uls{
+margin-top: -470px;
+color: #d600d6;
+margin-left: 40px;
+font-size: small;
+}
+
+.uls:hover{
+margin-top: -470px;
+color: #0D47A1;
+margin-left: 40px;
+font-size: small;
+}
+
+.old{
+margin-left: 30px;
+}
+
+.vr{
+margin-top: -15px;
+margin-left: 250px;
+}
+
+.rating-number{
+color: #EC407A;
+}
+
+.rating-number:hover{
+color: #0D47A1;
+}
+
+.e{
+font-size: 25px;
+}
+
+.e{
+font-family: "Roboto Condensed" , serif;
+font-optical-sizing: auto;
+font-weight: weight;
+font-style: normal;
+}
+
+.container {
+max-width: 800px;
+margin: 0 auto;
+padding: 20px;
+margin-left: 220px;
+}
+
+.info {
+display: flex;
+gap: 40px;
+margin-bottom: 20px;
+margin-left: -100px;
+}
+
+.info div {
+text-align: center;
+margin-top: 10px;
+}
+
+.info div span {
+display: block;
+font-size: 1.2em;
+font-weight: bold;
+color: #616161
+;
+}
+
+.subscription {
+text-align: center;
+font-size: 1.1em;
+
+}
+
+.slf:hover{
+color: #0D47A1;
+}
+
+.subscription del {
+color: #999;
+}
+
+.subscription .price {
+color: #ed00ed;
+font-weight: bold;
+}
+
+.links {
+text-align: center;
+margin-top: 40px;
+background-color: #E0E0E0 ;
+padding: 20px 15px;
+margin-left: -160px;
+}
+
+.linke{
+margin-top: 10px;
+}
+.links a {
+margin: 0 10px;
+color: black;
+text-decoration: none;
+
+}
+
+.links a:hover {
+color: #0D47A1;
+}

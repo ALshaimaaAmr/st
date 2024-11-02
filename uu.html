@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa; /* لون الخلفية */
+        }
+
+        .card {
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+            margin: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #ddd; /* لون الحدود */
+            border-radius: 8px; /* زوايا مستديرة */
+        }
+
+        .card:hover {
+            box-shadow: 0 0 20px 10px rgba(139, 69, 19, 0.8), /* SaddleBrown */
+                        0 0 30px 20px rgba(160, 82, 45, 0.8), /* Sienna */
+                        0 0 40px 30px rgba(210, 105, 30, 0.8); /* Chocolate */
+            transform: scale(1.05); /* زيادة حجم الكارد قليلاً */
+        }
+
+        .card:hover .card-body {
+            text-shadow: 0 0 10px rgba(210, 105, 30, 1), /* تأثير توهج */
+                         0 0 20px rgba(160, 82, 45, 1), 
+                         0 0 30px rgba(139, 69, 19, 1);
+        }
+
+        .homepage-hero {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .headline {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+    </style>
+    <title>تعلم أونلاين</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="easyt.online">بيتك عندنا</a>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">الاشتراكات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">الدبلومات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">الكورسات</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">تسجيل الدخول</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class='homepage-hero'>
+        <h2 class='headline'>تعلم أونلاين</h2>
+        <p>استكشف مجموعة متنوعة من الكورسات المتاحة لدينا.</p>
+        <div class="row text-center">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">اتعلم</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">الجرافيك</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">والبرمجة</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">وتقنيات</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">الذكاء الاصطناعي</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">والتسويق</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">الالكتروني</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">واللغات</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">وتطوير</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">المواقع</div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">والتطبيقات</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="./image/ISO9001.png" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>

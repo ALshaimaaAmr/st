@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardinal Numbers in Norwegian</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            transition: background-color 0.5s;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            margin: 10px;
+            width: 80%;
+            max-width: 600px;
+            animation: slideIn 0.5s ease-in;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden; /* Ensure rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        th {
+            background-color: #de00a5; /* Fuchsia */
+            color: white;
+            font-weight: bold;
+        }
+
+        td {
+            background-color: #f9f9f9;
+            transition: background-color 0.3s;
+        }
+
+        td:hover {
+            background-color: #de00a5; /* Change on hover */
+            color: white; /* Text color changes to white on hover */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        footer {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Grammar</h1>
+
+    <div class="card">
+        <h2>Cardinal Numbers in Norwegian</h2>
+        <p>Here are the cardinal numbers in Norwegian and their English equivalents:</p>
+        <table>
+            <tr>
+                <th>Norwegian</th>
+                <th>English</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>ei/en/ett</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>to</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>tre</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>fire</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>fem</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>ti</td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>tjue</td>
+            </tr>
+            <tr>
+                <td>100</td>
+                <td>(ett) hundre</td>
+            </tr>
+            <tr>
+                <td>1000</td>
+                <td>(ett) tusen</td>
+            </tr>
+            <tr>
+                <td>1,000,000</td>
+                <td>en million</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2>Arithmetic Problems</h2>
+        <p>Solve these problems:</p>
+        <p>1. 2 + 2 = ?</p>
+        <p>2. 3423 - 4 = ?</p>
+    </div>
+
+    <footer>
+        &copy; 2024 Cardinal Numbers
+    </footer>
+
+</body>
+</html>

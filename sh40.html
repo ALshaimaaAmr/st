@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="styles.css"> <!-- تأكد من صحة المسار -->
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet"> <!-- إضافة CSS لVideo.js -->
+</head>
+<body>
+    <div data-test-id="2138961056">
+        <div class="video-module_wrapper">
+            <noscript>
+                <p>Unable to play video. Please enable JavaScript or consider upgrading your browser.</p>
+            </noscript>
+            <video id="video-2138961056" class="video-js vjs-fluid" controls preload="auto" 
+                   poster="//view.vzaar.com/2138961056/image" 
+                   data-setup='{"controls": true, "autoplay": false, "preload": "auto"}'>
+                <source src="//view.vzaar.com/2138961056/adaptive.m3u8" type="application/x-mpegURL">
+                <source src="//view.vzaar.com/2138961056/download/sd_lower" type="video/mp4">
+                <!-- إضافة خيارات الترجمة هنا إذا لزم الأمر -->
+                <track src="https://ugc.futurelearn.com/uploads/files/61/67/6167a780-4ae3-4397-8b9c-050045198a47/1.1.1_%ED%95%99%EC%8A%B5_%EB%AA%A9%ED%91%9C_Learning_Objective__%EC%88%98%EC%A0%95%EB%B3%B8.vtt" kind="subtitles" srclang="ko" label="الكورية">
+                <p class="vjs-no-js">To view this video please enable JavaScript, and consider upgrading to a web browser that 
+                <a href="https://www.google.com/chrome/">supports HTML5 video</a></p>
+            </video>
+        </div>
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script> <!-- إضافة JavaScript لVideo.js -->
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Info Section</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* CSS لتنسيق القسم الخاص بالمعلومات */
+        .course-info-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-bottom: 1px solid #ddd;
+        }
+        .course-info-item {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+        .course-info-item i {
+            font-size: 1.2em;
+            color: #616161;
+        }
+        .course-info-item .label {
+            display: block;
+            font-size: 0.9em;
+            color: #616161;
+        }
+        .course-info-item .detail {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #333;
+        }
+        .course-info-item .link {
+            color: #e91e63;
+            font-size: 0.9em;
+            text-decoration: none;
+        }
+        
+        /* تنسيقات الاشتراك */
+        .subscription-info {
+            text-align: center;
+            font-size: 0.9em;
+            color: #333;
+        }
+        .subscription-info del {
+            color: #333;
+            margin-right: 5px;
+        }
+        .subscription-info .price {
+            color: #e91e63;
+            font-weight: bold;
+        }
+        
+        /* قسم الروابط */
+        .links-section {
+            display: flex;
+            justify-content: center;
+            background-color: #f0f0f0;
+            padding: 15px;
+            gap: 15px;
+            border-top: 1px solid #ddd;
+        }
+        .links-section a {
+            color: #333;
+            font-size: 0.9em;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+        .links-section a:hover {
+            color: #0D47A1;
+        }
+    </style>
+</head>
+<body>
+
+    <section class="course-info-section">
+        <div class="course-info-item">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <span class="label">Duration</span>
+            <div class="detail">2 weeks</div>
+        </div>
+        <div class="course-info-item">
+            <i class="fa-solid fa-clock"></i>
+            <span class="label">Weekly study</span>
+            <div class="detail">3 hours</div>
+        </div>
+        <div class="course-info-item">
+            <i class="fa-solid fa-globe"></i>
+            <span class="label">100% online</span>
+            <a href="#" class="link">How it works</a>
+        </div>
+        <div class="course-info-item">
+            <i class="fa-solid fa-infinity"></i>
+            <span class="label">Unlimited subscription</span>
+            <div class="subscription-info">
+                <del>$174.99</del> <span class="price">$119.99 for a whole year</span><br>
+                <a href="#" class="link">Learn more</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="links-section">
+        <a href="#">Overview</a>
+        <a href="#">Start dates</a>
+        <a href="#">Requirements</a>
+        <a href="#">Educators</a>
+        <a href="#">Learner reviews</a>
+        <a href="#">Try it</a>
+        <a href="#">More courses</a>
+    </div>
+
+</body>
+</html>

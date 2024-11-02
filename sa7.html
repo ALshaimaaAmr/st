@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <!-- إضافة مكتبة Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* تنسيق عام للصفحة */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            min-height: 100vh;
+        }
+
+        /* القائمة الجانبية */
+        .sidebar {
+            background-color: #f8f8f8;
+            padding: 20px;
+            border-right: 1px solid #ddd;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+            width: 250px; /* ثابت للعرض */
+        }
+
+        .content {
+            margin-left: 270px; /* ترك مسافة للشريط الجانبي */
+            padding: 20px;
+        }
+
+        /* شريط التقدم */
+        .progress-container {
+            margin-bottom: 20px;
+        }
+
+        .progress {
+            height: 20px;
+        }
+
+        .progress-bar {
+            background-color: #ff00ff;
+        }
+
+        /* الفيديو */
+        .video-container {
+            width: 670px;
+            height: 290px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0px;
+        }
+
+        .img-small {
+            width: 70%; /* استخدام نسبة مئوية لتحديد عرض الصورة */
+            height: auto; /* الحفاظ على نسبة الطول إلى العرض */
+            max-width: 600px; /* تحديد الحد الأقصى لعرض الصورة */
+        }
+
+        /* الشريط السفلي */
+        .bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 250px; /* تبدأ من نهاية الشريط الجانبي */
+            width: calc(100% - 250px); /* يأخذ العرض الكامل باستثناء عرض الشريط الجانبي */
+            background-color: #f8f8f8;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .bottom-bar button {
+            background-color: #ff00ff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .bottom-bar button:hover {
+            background-color: #ff66ff;
+        }
+
+        /* الأيقونات العلوية */
+        .top-icons {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .top-icons a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .top-icons a:hover {
+            color: #ff00ff;
+            text-decoration: underline;
+        }
+
+        /* تنسيق النص */
+        .resilience-text {
+            text-align: center; /* محاذاة النص في المنتصف */
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- القائمة الجانبية -->
+    <div class="sidebar">
+        <h6> Open now</h6>
+       
+        <ul class="list-unstyled">
+            <li class="week"> <a href="sa6.html">Let's get started - Video</a></li>
+            <li class="week"><a href="sa7.html">1.2 Learning online with Deakin - Video</a></li>
+            <li class="week"><a href="sa8.html">1.3 What helps us become resilient? - Discussion</a></li>
+            <li><a href="sa9.html">What is resilience and why is it important?</a></li>
+            <li><a href="sa10.html">Learning to become resilient</a></li>
+        </ul>
+        
+    </div>
+    <!-- قسم المحتوى -->
+    <div class="content">
+        <div class="container">
+            <!-- شريط التقدم -->
+            <div class="progress-container">
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 33%;" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100">
+                        1.2 You've completed 1 step in Week 1
+                    </div>
+                </div>
+            </div>
+
+            <!-- الأيقونات العلوية -->
+            <div class="top-icons">
+                <a href="todo.html" target="_blank">To do</a>
+                <a href="conversations.html" target="_blank">Conversations</a>
+                <a href="progress.html" target="_blank">Progress</a>
+            </div>
+
+            <!-- الفيديو -->
+            <div class="video-container">
+                <img src="img/سس.jpg" class="img-small" alt="Resilience Image" >
+            </div>
+            <h2>Meet the team
+            </h2>
+            <div class="content-content_-A5ni" dir="ltr"><p>Your lead educator on this course is <a href="https://www.legacyfundraising.co.uk/"><strong>Dr Claire Routley</strong></a>. Claire is a Postdoctoral Research Associate at the <a href="https://research.kent.ac.uk/philanthropy/">Centre for Philanthropy</a>, with a particular interest in legacy and in memory giving. She also works as a fundraising consultant, specialising in legacy fundraising.</p>
+
+                <p>Joining Claire as a course educator is <a href="https://www.futurelearn.com/profiles/16745572"><strong>Stuart Chell</strong></a>. Stuart leads an agency that delivers fundraising campaigns and trains fundraisers for small and medium sized charities. His personal specialisms are high value giving and faith based fundraising. He is also currently undertaking postgraduate studies in the <a href="https://research.kent.ac.uk/philanthropy/">Centre for Philanthropy</a> at the University of Kent.</p>
+                
+                <p>Claire and Stuart will be supported by fellow educators <a href="https://www.kent.ac.uk/social-policy-sociology-social-research/people/1861/"><strong>Dr Ali Body</strong></a>, Director of Studies of the <a href="https://www.kent.ac.uk/courses/postgraduate/769/">Masters of Philanthropic Studies</a> and <a href="https://www.kent.ac.uk/social-policy-sociology-social-research/people/564/breeze-beth"><strong>Dr Beth Breeze</strong></a>, Director of the <a href="https://research.kent.ac.uk/philanthropy/">Centre for Philanthropy</a>.</p>
+                
+                <p>The course was first put together by <a href="https://www.linkedin.com/in/lesley-alborough-54191615/"><strong>Dr Lesley Alborough</strong></a>, who researches and teaches gifting and asking practices in the Third Sector. Lesley presents many of the course videos.</p>
+                
+                <p>Throughout the course we will be joined by expert practitioners in the field, and we’ll introduce them as they join us.</p>
+                
+                <p>Other than at advertised times (see the course front page, emails or ‘pinned’ comments), the Educators won’t usually be able to join the discussions themselves or respond to individual comments, but the course encourages a strong learning community. The learning is focussed around debate and discussion - supporting other learners, sharing your own experience and knowledge, and listening to new perspectives. We hope that you will enjoy interacting with and learning from each other in this way. Don’t forget to comment, reply to other learners and ‘like’ comments.</p>
+                
+                <hr>
+                
+                <p>You can also follow the Centre for Philanthropy on social media:</p>
+                
+                <ul>
+                  <li>
+                    <a href="https://twitter.com/unikentcfp">Centre for Philanthropy, @UniKentCfP</a> on Twitter
+                  </li>
+                  <li>
+                    <a href="https://www.facebook.com/KentSSPSSR/">Kent School of Social Policy, Sociology and Social Research (SSPSSR)</a> on Facebook
+                  </li>
+                </ul>
+                </div>
+    <!-- الشريط السفلي -->
+    <div class="bottom-bar">
+        <button><a href="sa6.html" style="color: #fff; text-decoration: none;">Previous</a></button>
+        <button id="toggleButton" onclick="toggleComplete()">Mark as complete</button>
+        <button><a href="sa8.html" style="color: #fff; text-decoration: none;">Next</a></button>
+    </div>
+
+    <!-- إضافة مكتبة jQuery و Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- JavaScript لتغيير النص عند الضغط على الزر -->
+    <script>
+        function toggleComplete() {
+            const button = document.getElementById("toggleButton");
+            if (button.innerHTML.trim() === "Mark as complete") {
+                button.innerHTML = '<span>&#10003;</span> Step completed';
+            } else {
+                button.innerHTML = 'Mark as complete';
+            }
+        }
+    </script>
+</body>
+</html>

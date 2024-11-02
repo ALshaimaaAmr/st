@@ -464,6 +464,124 @@
         .card-body .btn {
             margin-top: auto; /* لضمان أن الزر دائمًا في الأسفل */
         }
+        
+        .hh{
+            color: #030138;
+            text-decoration: none;
+        }
+
+
+
+
+        /* تنسيق الخلفية */
+        .wrapper {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        /* تنسيق الحاوية */
+        .background {
+            position: relative;
+            width: 80%;
+            height: 85vh; /* عرض الخلفية */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background: url('img/الخلفية.jpg') no-repeat center center; /* مسار الصورة */
+            background-size: cover;
+        }
+
+        /* خلفية بلون هادئ */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 192, 203, 0.8), rgba(210, 180, 140, 0.8)); /* تدرج بين الوردي والبني الفاتح مع شفافية أقل */
+            z-index: 1; /* خلف النص */
+        }
+
+        /* تنسيق النص */
+        .text, .translation {
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            color: white;
+            z-index: 2; /* فوق الخلفية */
+            animation: fade 4s infinite, changeColor 4s infinite; /* تأثير الاختفاء وتغيير الألوان */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* إضافة ظل للنص */
+        }
+
+        /* تأثير تغيير الألوان */
+        @keyframes changeColor {
+            0% { color: white; text-shadow: 0 0 20px white; }
+            25% { color: #ff69b4; text-shadow: 0 0 20px #ff69b4; } /* فوشيا */
+            50% { color: #9370db; text-shadow: 0 0 20px #9370db; } /* بنفسجي */
+            75% { color: #f0e68c; text-shadow: 0 0 20px #f0e68c; } /* لون فاتح */
+            100% { color: white; text-shadow: 0 0 20px white; }
+        }
+
+        /* حركة الاختفاء */
+        @keyframes fade {
+            0%, 20% {
+                opacity: 1; /* يظهر النص */
+            }
+            25%, 95% {
+                opacity: 0; /* يختفي النص */
+            }
+            100% {
+                opacity: 1; /* يظهر النص مرة أخرى */
+            }
+        }
+
+        /* تنسيق الحاوية النصية */
+        .container {
+            position: relative;
+            text-align: center;
+            z-index: 3; /* فوق كل العناصر */
+        }
+
+        .translation {
+            opacity: 0; /* بدء غير مرئي */
+            animation: fadeIn 4s infinite, changeColor 4s infinite; /* تأثير الاختفاء وتغيير الألوان */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* إضافة ظل للنص */
+            animation-delay: 2s; /* تأخير 2 ثانية */
+        }
+
+        /* تأثير تتابع الاختفاء */
+        @keyframes fadeIn {
+            0%, 20% {
+                opacity: 0; /* يبدأ غير مرئي */
+            }
+            25%, 95% {
+                opacity: 1; /* يصبح مرئي */
+            }
+            100% {
+                opacity: 0; /* يصبح غير مرئي مرة أخرى */
+            }
+        }
+
+        /* تحسين العرض على الشاشات الصغيرة */
+        @media (max-width: 768px) {
+            .text, .translation {
+                font-size: 2rem; /* تقليل حجم الخط */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .text, .translation {
+                font-size: 1.5rem; /* تقليل حجم الخط بشكل أكبر للأجهزة الصغيرة */
+            }
+        }
+        
     </style>
 </head>
 <body>
@@ -481,14 +599,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="coursesLink">Courses</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Degree</a>
-                    </li>
+                    
                     <li class="nav-item">
                         <a class="nav-link" href="#" id="forBusinessLink">For Business</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Your Learning</a>
+                        <a class="nav-link" href="e.html">Your Learning</a>
                     </li>
                 </ul>
                 <form class="d-flex search-form" role="search"> <!-- إضافة الكلاس هنا -->
@@ -498,60 +614,27 @@
                 <div class="dropdown">
                     <img src="img\c2.png" alt="User" class="user-icon" width="40" height="40" data-bs-toggle="dropdown" aria-expanded="false">
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#">Your Learning</a></li>
-                        <li><a class="dropdown-item" href="#">Wishlist</a></li>
-                        <li><a class="dropdown-item" href="#">Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Settings</a></li>
-                        <li><a class="dropdown-item" href="#">Account</a></li>
+                        <li><a class="dropdown-item" href="e.html">Your Learning</a></li>
+                       
+                        <li><a class="dropdown-item" href="c.html">Profile</a></li>
+                        <li><a class="dropdown-item" href="b.html">Settings</a></li>
+                        <li><a class="dropdown-item" href="ab.html">Account</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                        <li><a class="dropdown-item" href="indee.html">Sign out</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="container courses-container" id="coursesContainer">
-        <div class="courses-list">
-            <div>
-                <h5>Short Online Courses</h5>
-                <ul>
-                    <li>Explore Courses with Unlimited</li>
-                    <li>ExpertTracks</li>
-                    <li>Premium Courses</li>
-                    <li>All Short Online Courses</li>
-                    <li><a href="#" class="btn btn-outline-primary">Get Unlimited Learning</a></li>
-                </ul>
-            </div>
-            <div>
-                <h5>Online Certifications</h5>
-                <ul>
-                    <li>Microcredentials</li>
-                    <li>Bootcamps</li>
-                    <li>All Online Certifications</li>
-                </ul>
-            </div>
-            <div>
-                <h5>Online Degrees</h5>
-                <ul>
-                    <li>Business & Management Degrees</li>
-                    <li>MBA Degrees</li>
-                    <li>Psychology Degrees</li>
-                    <li>Teaching Degrees</li>
-                    <li>IT & Computer Science Degrees</li>
-                    <li>All Online Degrees</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
     <div class="container industry-container" id="industryContainer">
         <h5>Industry Type</h5>
         <ul class="industry-list">
-            <li>For Universities</li>
-            <li>For Businesses</li>
-            <li>For Government</li>
-            <li>For Schools</li>
+            <li><a href="ا.html"class="hh" >For Universities</a></li>
+            <li><a href="na.html"class="hh" >For Businesses</a></li>
+            <li><a href="ا.html"class="hh" >For Government</a></li>
+            <li><a href="na4.html"class="hh" >For Schools</a></li>
         </ul>
     </div>
     <div class="container hidden-section" id="subjectContainer">
@@ -559,20 +642,13 @@
             <div class="col-md-6">
                 <h5>Subjects</h5>
                 <ul class="subject-list">
-                    <li>Business & Management</li>
-                    <li>Creative Arts & Media</li>
-                    <li>Healthcare & Medicine</li>
-                    <li>History</li>
-                    <li>IT & Computer Science</li>
-                    <li>Language</li>
-                    <li>Law</li>
-                    <li>Literature</li>
-                    <li>Nature & Environment</li>
-                    <li>Politics & Society</li>
-                    <li>Psychology & Mental Health</li>
-                    <li>Science, Engineering & Maths</li>
-                    <li>Study Skills</li>
-                    <li>Teaching</li>
+                    <li ><a href="na.html"class="hh" > Business & Management</li></a>
+                    <li ><a href="na1.html" class="hh"> Creative Arts & Media</li></a>
+                    <li > <a href="na2.html"class="hh" >Healthcare & Medicine</li></a>
+                    <li> <a href="na3.html"class="hh">History</li></a>
+                    <li ><a href="na5.html"class="hh">IT & Computer Science</li></a>
+                    <li ><a href="na6.html"class="hh">Language</li></a>
+                   
                 </ul>
             </div>
             <div class="col-md-6">
@@ -581,7 +657,9 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card mb-3">
+                                <a href="s9.html">
                                 <img src="img/thumbnail_bf4d80fd-a8a8-4990-a968-76cb5d9a54d7.webp" class="card-img-top" alt="Project Management">
+                               </a>
                                 <div class="card-body">
                                     <h6 class="card-title">Foundations of Project Management</h6>
                                 </div>
@@ -589,7 +667,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card mb-3">
+                                <a href="s10.html">
                                 <img src="img/thumbnail_fdee0391-6169-4d17-a80f-7825b6cc23ff.webp" class="card-img-top" alt="People Management Skills">
+                                </a>
                                 <div class="card-body">
                                     <h6 class="card-title">People Management Skills</h6>
                                 </div>
@@ -599,7 +679,9 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="card mb-3">
+                                <a href="s11.html">
                                 <img src="img/thumbnail_36d68953-a00a-4f96-8016-7dc8607c7771.webp" class="card-img-top" alt="Cyber Security">
+                               </a>
                                 <div class="card-body">
                                     <h6 class="card-title">Introduction to Cyber Security</h6>
                                 </div>
@@ -607,7 +689,9 @@
                         </div>
                         <div class="col-md-6">
                             <div class="card mb-3">
+                                <a href="s12.html">
                                 <img src="img/thumbnail_3dbed0ee-c9a9-4abd-9d87-c2ddd443bb48.webp" class="card-img-top" alt="Healthcare Trainer">
+                               </a>
                                 <div class="card-body">
                                     <h6 class="card-title">Train the Healthcare Trainer</h6>
                                 </div>
@@ -663,7 +747,7 @@
                     <img src="img/9fce77fc-75e5-462e-86fb-432e258322b5.svg" alt="University of Leeds Logo" class="mx-2">
                     <img src="img/ea43bd27-7641-4110-ab59-bfabf08f3713.svg" alt="The Open University Logo" class="mx-2">
                 </div>
-                <a href="#" class="btn btn-pink mt-3">explore courses</a>
+                <a href="na3.html" class="btn btn-pink mt-3">explore courses</a>
             </div>
             <div class="discount-container d-flex justify-content-between align-items-center p-3">
                 <div class="left-text">
@@ -695,7 +779,7 @@
                         <div class="card-body">
                             <h5 class="card-title">People Management Skills</h5>
                             <p class="card-text">Discover the key methods, strategies and principles of people management and develop your own management style.</p>
-                            <a href="#" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
+                            <a href="s10.html" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
                         </div>
                     </div>
                 </div>
@@ -706,7 +790,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Foundations of Project Management</h5>
                             <p class="card-text">Explore the fundamental aspects of project management and develop your understanding of traditional project lifecycles.</p>
-                            <a href="#" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
+                            <a href="s9.html" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
                         </div>
                     </div>
                 </div>
@@ -717,7 +801,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Introduction to Cyber Security</h5>
                             <p class="card-text">Learn the essentials of cyber security and build your skills to better protect your digital information from security threats.</p>
-                            <a href="#" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
+                            <a href="s11.html" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
                         </div>
                     </div>
                 </div>
@@ -728,13 +812,22 @@
                         <div class="card-body">
                             <h5 class="card-title">Train the Healthcare Trainer</h5>
                             <p class="card-text">Learn how to deliver healthcare training using evidence-based teaching methods, and progress towards becoming an expert trainer.</p>
-                            <a href="#" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
+                            <a href="s12.html" class="btn btn-custom">Short Course</a> <!-- تغيير هنا -->
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section><br><br><br>
+    <section class="wrapper">
+        <div class="background">
+            <div class="overlay"></div> <!-- إضافة الخلفية بلون هادئ -->
+            <div class="container">
+                <h1 class="text">Discover New Horizons of Knowledge</h1>
+                <h1 class="translation">اكتشف آفاق جديدة من المعرفة</h1>
+            </div>
+        </div>
+    </section>
     <section>
         
         <div class="container my-4">
@@ -742,7 +835,7 @@
             <div class="row g-3">
                 <!-- الكارد الأول -->
                 <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
+                    <a href="na.html" class="card card-custom p-3">
                         <h3>Business & Management</h3>
                         <p>Further your career with an online communication, leadership, or business management course.</p>
                         <span class="arrow">&gt;</span>
@@ -750,7 +843,7 @@
                 </div>
                 <!-- الكارد الثاني -->
                 <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
+                    <a href="na1.html" class="card card-custom p-3">
                         <h3>Creative Arts & Media</h3>
                         <p>Discover or grow your creativity with our online arts and media courses.</p>
                         <span class="arrow">&gt;</span>
@@ -758,7 +851,7 @@
                 </div>
                 <!-- الكارد الثالث -->
                 <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
+                    <a href="na2.html" class="card card-custom p-3">
                         <h3>Healthcare & Medicine</h3>
                         <p>Get vital skills and training in healthcare with our online courses.</p>
                         <span class="arrow">&gt;</span>
@@ -769,7 +862,7 @@
             <div class="row g-3">
                 <!-- الكارد الرابع -->
                 <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
+                    <a href="na3.html" class="card card-custom p-3">
                         <h3>History</h3>
                         <p>Uncover ancient archaeology or explore important events from across human history.</p>
                         <span class="arrow">&gt;</span>
@@ -777,7 +870,7 @@
                 </div>
                 <!-- الكارد الخامس -->
                 <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
+                    <a href="na4.html" class="card card-custom p-3">
                         <h3>IT & Computer Science</h3>
                         <p>Explore tech trends, learn to code or develop programming skills with online courses.</p>
                         <span class="arrow">&gt;</span>
@@ -785,7 +878,7 @@
                 </div>
                 <!-- الكارد السادس -->
                 <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
+                    <a href="na5.html" class="card card-custom p-3">
                         <h3>Language</h3>
                         <p>Discover a new language or build language skills in a professional context with our courses.</p>
                         <span class="arrow">&gt;</span>
@@ -793,31 +886,6 @@
                 </div>
             </div>
     
-            <div class="row g-3">
-                <!-- الكارد السابع -->
-                <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
-                        <h3>Law</h3>
-                        <p>Gain a better understanding of the justice system with our online law courses.</p>
-                        <span class="arrow">&gt;</span>
-                    </a>
-                </div>
-                <!-- الكارد الثامن -->
-                <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
-                        <h3>Literature</h3>
-                        <p>Improve your writing skills or learn more about the literary greats with our online courses.</p>
-                        <span class="arrow">&gt;</span>
-                    </a>
-                </div>
-                <!-- الكارد التاسع -->
-                <div class="col-md-4 mb-4">
-                    <a href="https://example.com" class="card card-custom p-3">
-                        <h3>Nature & Environment</h3>
-                        <p>Explore the natural world and the ecological challenges it faces with our courses.</p>
-                        <span class="arrow">&gt;</span>
-                    </a>
-                </div>
             </div>
         </div>
     </section><br><br><br>
@@ -830,9 +898,9 @@
                 <h2 class="content">Interested in studying abroad?</h2>
                 <span class="underline"></span>
                 <p class="content mt-3">Find the right study abroad programme with FutureLearn. Get expert guidance and support every step of the way from our trusted partners and take the first step to unlocking global academic, social and career opportunities. Enquire now to open up your world of learning.</p>
-                <button class="btn btn-fuchsia text-white" style="background-color: fuchsia;">
+                <a href="na5.html" class="btn btn-fuchsia text-white" style="background-color: fuchsia;">
                     find out more
-                </button>
+                </a>
             </div>
         </div>
     </section><br><br><br>
@@ -850,7 +918,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span> 4.8(692  reviews)</span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -865,7 +933,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span> 4.9(464 reviews)</span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s1.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -880,7 +948,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span> 4.8(510 reviews)</span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s2.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -898,7 +966,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span> 4.8(144 reviews)</span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s3.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -913,7 +981,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span>4.8(112 reviews) </span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s4.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -928,7 +996,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span>4.5 (43 reviews) </span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s5.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -946,7 +1014,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span>4.4(59 reviews) </span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s6.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -961,7 +1029,7 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span>4.8(228 reviews) </span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s7.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
@@ -976,59 +1044,13 @@
                         <span>⭐⭐⭐⭐⭐</span>
                         <span> 4.4(156 reviews)</span>
                     </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
+                    <a href="s8.html" class="btn btn-light mt-3">find out more</a>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
-        <!-- Card 10 -->
-        <div class="col-md-4 mb-4">
-            <div class="card text-white bg-fuchsia">
-                <img src="img/thumbnail_87037db4-3a13-41ec-ac1a-022399316fd0.webp" class="card-img-top" alt="University Image">
-                <div class="card-body">
-                    <h5 class="card-title">The University of Kent</h5>
-                    <h6 class="card-subtitle mb-2">Understanding Autism</h6>
-                    <div class="rating">
-                        <span>⭐⭐⭐⭐⭐</span>
-                        <span>4.7(1062 reviews) </span>
-                    </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card 11 -->
-        <div class="col-md-4 mb-4">
-            <div class="card text-white bg-fuchsia">
-                <img src="img/thumbnail_01b1d374-fa27-4ebf-8b6c-3cc6b3403939.webp" class="card-img-top" alt="University Image">
-                <div class="card-body">
-                    <h5 class="card-title">University of Birmingham</h5>
-                    <h6 class="card-subtitle mb-2">Improving Your Image: Dental Photography in Practice</h6>
-                    <div class="rating">
-                        <span>⭐⭐⭐⭐⭐</span>
-                        <span>4.7(35 reviews) </span>
-                    </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
-                </div>
-            </div>
-        </div>
-        <!-- Card 12 -->
-        <div class="col-md-4 mb-4">
-            <div class="card text-white bg-fuchsia">
-                <img src="img/thumbnail_4c7b7981-4e47-4e4c-b2fb-0749a0df4889.webp" class="card-img-top" alt="University Image">
-                <div class="card-body">
-                    <h5 class="card-title">The University of Glasgow, The University of Edinburgh & The University of Sheffield</h5>
-                    <h6 class="card-subtitle mb-2">Career Management for Early Career Academic Researchers</h6>
-                    <div class="rating">
-                        <span>⭐⭐⭐⭐⭐</span>
-                        <span>4.7(23 reviews) </span>
-                    </div>
-                    <a href="#" class="btn btn-light mt-3">find out more</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </section><br><br><br>
     <footer class="bg-light py-5">
         <div class="container">
@@ -1053,9 +1075,9 @@
               <p>e-mail: sbka@gmail.com</p>
               <p>Phone number: 01037892157</p>
               <div class="social-icons">
-                <a href="#" class="text-de00a5 me-3"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="text-de00a5 me-3"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="text-de00a5"><i class="fa-brands fa-instagram"></i></a>
+                <a href="facebook.html" class="text-de00a5 me-3"><i class="fa-brands fa-facebook"></i></a>
+                <a href="linked\linkedin.html" class="text-de00a5 me-3"><i class="fa-brands fa-linkedin"></i></i></a>
+                <a href="insta.html" class="text-de00a5"><i class="fa-brands fa-instagram"></i></a>
               </div>
             </div>
       

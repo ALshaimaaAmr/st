@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>منصة تعليمية</title>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+logo img {
+    width: 150px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    padding: 0px 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sign-in, .register {
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in {
+    background-color: transparent;
+    color: #555;
+}
+
+.sign-in:hover {
+    background-color: #f0f0f0;
+}
+.register {
+    background-color: #d63384;
+    color: white;
+}
+
+.register:hover {
+    background-color: #b72e71;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .search-bar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo img {
+        width: 120px;
+    }
+
+    .sign-in, .register {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 168, 255, 0.5), rgba(185, 0, 255, 0.5)), url("img/زين.jpg");
+    background-blend-mode: overlay;
+    background-size: 100% 100%;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 200px 50px;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.search-box {
+    width: 500px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+    padding: 10px 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.search-box input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 20px;
+}
+.search-box i {
+    color: #999;
+    margin-right: 10px;
+
+}
+
+
+.hero h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.hero{
+  font-family: "Roboto Condensed", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+}
+.btn {
+    background-color: #d600a5;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color:#EC407A;
+}
+
+.courses {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.courses h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+course-grid {
+    display: flex;
+    justify-content: space-around;
+}
+
+.course-card {
+    background-color: #FAFAFA;
+    padding: 20px;
+    width: 30%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.course-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.course-card p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.workforce {
+    padding: 50px 50px;
+    background-color: #FAFAFA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 100px;
+    height: 400px;
+    width: 900px;
+    background-position: center;
+    justify-content: center;
+    margin: auto;
+    display: flex;
+    margin-bottom: 50px;
+}
+
+
+.workforce .btn{
+    height: 40px;
+    width: 220px;
+    position: absolute;
+    margin-top: 260px;
+    margin-right: 420px;
+}
+.workforce .content h2 {
+    color: #d600a5;
+    font-size: 2rem;
+    margin-bottom: 50px;
+    margin-right: 20px;
+}
+
+.workforce .content p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto 90px auto;
+    margin-right: 40px;
+}
+
+.partners {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.partners img {
+    max-width: 250px;
+    height: auto;
+    width: 290px;
+} 
+
+footer {
+    background-color: #FCE4EC;
+    color: black;
+    padding: 40px 0;
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-container div {
+    flex: 1;
+    padding: 0 20px;
+  }
+  
+  .footer-about h3,
+  .footer-links h3,
+  .footer-contact h3,
+  .footer-subscribe h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+  .footer-about p,
+  .footer-contact p,
+  .footer-links ul {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  .footer-links ul {
+    list-style: none;
+  }
+  
+  .footer-links ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-links ul li a {
+    color: black;
+    text-decoration: none;
+  }
+  
+  .footer-links ul li a:hover {
+    text-decoration: underline;
+  }
+  .social-icons a {
+    margin-right: 13px;
+    color: #de00a5;
+    font-size: 25px;
+    background-position: center;
+  }
+  
+
+  .social-icons a:hover {
+    margin-right: 13px;
+    color: #b72e71;
+    font-size: 25px;
+    background-position: center;
+  }
+
+  
+  .footer-subscribe input[type="email"] {
+    padding: 12px;
+    width: 80%;
+    border: none;
+    border-radius: 15px;
+    margin-right: 10px;
+  }
+  .footer-subscribe button {
+    padding: 10px 18px;
+    border: none;
+    background-color: #de00a5;
+    color: black;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 6px;
+  }
+  
+  .footer-subscribe button:hover {
+    background-color: #d600a5;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid #34495e;
+    padding-top: 20px;
+    font-size: 14px;
+  }
+
+    </style>
+    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body bgcolor="#FFEBEE">
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="logo.png" alt=""></a>
+            </div>
+            <div class="nav-buttons">
+                <div class="search-bar">
+                <input type="text" placeholder="Search courses now">  
+               <a href=""><i class="fa-solid fa-magnifying-glass"></i></a>
+                <a href="sign in .html" class="register">Sign in</a>
+                <a href="sign.html" class="register">Register</a>
+            </div>
+        </nav>
+
+    <section class="hero">
+        <div class="he-text">
+            <h2>Welcome to our learing platform</h2>
+            <p>Start your learing now with the best online courses</p>
+            <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i> 
+                <input type="text" placeholder="Search now for free">
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="courses">
+        <h2>Start now with our special discounts.</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <h3>There are now discounts up</h3>
+                <h3>20%</h3>
+                <a href="#" class="btn">Start now</a>
+            </div>
+            <div class="course-card">
+                <h3>There are now discounts up</h3>
+                <h3>50%</h3>
+                <a href="#" class="btn">Start now</a>
+            </div>
+            <div class="course-card">
+                <h3>There are now discounts up</h3>
+                <h3>10%</h3>
+                <a href="#" class="btn">start now</a>
+            </div>
+        </div>
+    </section>
+    <section class="workforce">
+        <div class="content">
+            <h2>Create a culture of learning</h2>
+            <div class="er"></div>
+            <p>
+                Create a culture of learning and boost professional development with our range of world-class business solutions. Get access to high-quality online courses for you and your employees, and discover what FutureLearn could do for your workforce.
+            </p>
+        </div>
+        <div class="partners">
+            <img src="FL-Enterprise-600x400_2x.webp " alt="Nesta">
+        </div>
+        <a href="#" class="btn">Get in touch</a>
+    </section>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-about">
+            <h3>About our platform</h3>
+            <p>Our platform provides the latest educational curricula to develop skills in life.</p>
+          </div>
+          
+          <div class="footer-links">
+            <h3>Quick links</h3>
+            <ul>
+              <li><a href="#">Lessons</a></li>
+              <li><a href="#">educational programs</a></li>
+              <li><a href="#">certficates</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+          
+          <div class="footer-contact">
+            <h3>Contact us</h3>
+            <p>e-mail:sbka@gmail.com</p>
+            <p>Phone number:01037892157</p>
+            <div class="social-icons">
+              <a href="#"><i class="fa-brands fa-facebook"></i></a>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+              <a href="#"><i class="fa-brands fa-instagram"></i>
+              </a>
+            </div>
+        </div>
+          
+        <div class="footer-subscribe">
+          <h3>Sudscribe now</h3>
+          <form>
+            <input type="email" placeholder="Enter your e-mail" required>
+            <button type="submit">Sudscribe</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; All right reserved. Learning platform ,2024</p>
+      </div>
+    </footer>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</body>
+</html>
